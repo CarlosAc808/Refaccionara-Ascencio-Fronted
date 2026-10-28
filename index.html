@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Laura Díaz | Pastelería &amp; Repostería Artesanal</title>
+<!-- Google Fonts & Material Symbols -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&amp;family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS with custom configuration -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "primary-fixed-dim": "#ffb4a4",
+            "on-secondary-fixed": "#31120e",
+            "inverse-primary": "#ffb4a4",
+            "on-primary-container": "#ffb6a6",
+            "surface-tint": "#984634",
+            "on-tertiary-container": "#efc167",
+            "primary-fixed": "#ffdad3",
+            "outline-variant": "#dbc1bb",
+            "secondary-container": "#fec4bb",
+            "on-surface-variant": "#55433f",
+            "on-primary-fixed": "#3e0500",
+            "on-tertiary-fixed": "#261900",
+            "outline": "#88726e",
+            "on-error-container": "#93000a",
+            "background": "#fdf9f3",
+            "on-tertiary-fixed-variant": "#5d4200",
+            "tertiary-fixed-dim": "#eec067",
+            "on-secondary": "#ffffff",
+            "on-primary-fixed-variant": "#7a2f1f",
+            "surface-container-low": "#f7f3ed",
+            "surface-bright": "#fdf9f3",
+            "on-background": "#1c1c18",
+            "surface": "#fdf9f3",
+            "secondary-fixed": "#ffdad5",
+            "surface-dim": "#dddad4",
+            "surface-container": "#f1ede7",
+            "tertiary": "#503800",
+            "on-tertiary": "#ffffff",
+            "surface-container-highest": "#e6e2dc",
+            "on-secondary-container": "#7a4f48",
+            "tertiary-container": "#6d4e00",
+            "primary-container": "#8a3b2a",
+            "surface-container-high": "#ebe8e2",
+            "on-primary": "#ffffff",
+            "secondary": "#7f534d",
+            "error-container": "#ffdad6",
+            "inverse-surface": "#31302d",
+            "primary": "#6c2516",
+            "error": "#ba1a1a",
+            "on-secondary-fixed-variant": "#643c36",
+            "inverse-on-surface": "#f4f0ea",
+            "surface-container-lowest": "#ffffff",
+            "secondary-fixed-dim": "#f2b9b1",
+            "tertiary-fixed": "#ffdea4",
+            "on-surface": "#1c1c18",
+            "surface-variant": "#e6e2dc",
+            "on-error": "#ffffff"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "space-sm": "0.5rem",
+            "gutter-mobile": "1rem",
+            "space-xl": "2.5rem",
+            "space-xs": "0.25rem",
+            "space-lg": "1.5rem",
+            "gutter": "1.5rem",
+            "margin-mobile": "1.25rem",
+            "margin-tablet": "2rem",
+            "margin": "3rem",
+            "space-md": "1rem"
+          },
+          "fontFamily": {
+            "body-sm": ["Plus Jakarta Sans"],
+            "title-md": ["Plus Jakarta Sans"],
+            "headline-sm": ["Playfair Display"],
+            "body-md": ["Plus Jakarta Sans"],
+            "headline-lg": ["Playfair Display"],
+            "price-display": ["Plus Jakarta Sans"],
+            "display-lg-mobile": ["Playfair Display"],
+            "title-lg": ["Plus Jakarta Sans"],
+            "label-lg": ["Plus Jakarta Sans"],
+            "display-lg": ["Playfair Display"],
+            "body-lg": ["Plus Jakarta Sans"],
+            "headline-lg-mobile": ["Playfair Display"],
+            "headline-md": ["Playfair Display"],
+            "label-md": ["Plus Jakarta Sans"]
+          },
+          "fontSize": {
+            "body-sm": ["13px", {"lineHeight": "20px", "fontWeight": "400"}],
+            "title-md": ["16px", {"lineHeight": "24px", "fontWeight": "600"}],
+            "headline-sm": ["22px", {"lineHeight": "30px", "fontWeight": "500"}],
+            "body-md": ["15px", {"lineHeight": "24px", "fontWeight": "400"}],
+            "headline-lg": ["40px", {"lineHeight": "48px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+            "price-display": ["20px", {"lineHeight": "24px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+            "display-lg-mobile": ["36px", {"lineHeight": "44px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+            "title-lg": ["18px", {"lineHeight": "26px", "fontWeight": "700"}],
+            "label-lg": ["14px", {"lineHeight": "20px", "letterSpacing": "0.04em", "fontWeight": "600"}],
+            "display-lg": ["56px", {"lineHeight": "64px", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+            "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+            "headline-lg-mobile": ["28px", {"lineHeight": "36px", "fontWeight": "600"}],
+            "headline-md": ["30px", {"lineHeight": "38px", "fontWeight": "500"}],
+            "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.06em", "fontWeight": "600"}]
+          }
+        },
+      },
+    }
+  </script>
+<style>
+    .no-scrollbar::-webkit-scrollbar { display: none; }
+    .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    .warm-shadow { box-shadow: 0 4px 20px -2px rgba(43, 27, 23, 0.06); }
+    .warm-shadow-lg { box-shadow: 0 14px 34px -4px rgba(43, 27, 23, 0.12), 0 2px 6px 0 rgba(43, 27, 23, 0.04); }
+  </style>
+</head>
+<body class="bg-background text-on-background font-body-md text-body-md antialiased selection:bg-secondary-container selection:text-on-secondary-container">
+<!-- TopAppBar (from Shared Components JSON) -->
+<header class="bg-surface/90 backdrop-blur-md dark:bg-surface/90 docked full-width top-0 fixed w-full z-40 shadow-sm border-b border-outline-variant/20">
+<div class="flex justify-between items-center w-full px-margin-mobile h-16 max-w-7xl mx-auto">
+<!-- Leading Icon / Drawer Trigger -->
+<button aria-label="Abrir menú" class="w-10 h-10 rounded-full flex items-center justify-center text-primary dark:text-inverse-primary hover:text-primary dark:hover:text-primary-fixed transition-colors duration-200 active:scale-95 transition-transform" type="button">
+<span class="material-symbols-outlined" data-icon="menu">menu</span>
+</button>
+<!-- Brand Logo / Headline -->
+<a class="font-headline-sm text-headline-sm font-semibold tracking-tight text-primary dark:text-inverse-primary text-center" href="#">
+        Laura Díaz
+      </a>
+<!-- Trailing Action: Shopping Bag & WhatsApp Quick Access -->
+<div class="flex items-center space-x-1">
+<a aria-label="Contactar por WhatsApp" class="w-9 h-9 rounded-full flex items-center justify-center text-primary hover:text-primary transition-colors active:scale-95" href="https://wa.me/34600000000" rel="noopener noreferrer" target="_blank">
+<span class="material-symbols-outlined" data-icon="chat" style="font-size: 20px;">chat</span>
+</a>
+<button aria-label="Ver cesta" class="relative w-10 h-10 rounded-full flex items-center justify-center text-primary dark:text-inverse-primary hover:text-primary transition-colors active:scale-95" type="button">
+<span class="material-symbols-outlined" data-icon="shopping_bag">shopping_bag</span>
+<span class="absolute top-2 right-2 w-2 h-2 rounded-full bg-primary-container ring-2 ring-surface"></span>
+</button>
+</div>
+</div>
+</header>
+<main class="pt-16 pb-20">
+<!-- Hero Section -->
+<section class="relative overflow-hidden px-margin-mobile pt-6 pb-10">
+<!-- Atelier Badge -->
+<div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-surface-container border border-outline-variant/30 text-on-surface-variant font-label-md text-label-md mb-4">
+<span class="material-symbols-outlined text-primary text-base" data-icon="verified">verified</span>
+<span>Obrador Artesanal &amp; Local</span>
+</div>
+<!-- Main Heading & Subtitle -->
+<div class="max-w-xl">
+<h1 class="font-display-lg-mobile text-display-lg-mobile md:font-display-lg md:text-display-lg text-primary leading-tight mb-3">
+          Dulzura hecha arte para tus momentos inolvidables.
+        </h1>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6 leading-relaxed">
+          Tartas de autor elaboradas diariamente bajo pedido. Seleccionamos ingredientes 100% naturales, mantequilla de pasto y vainillas puras sin aditivos artificiales.
+        </p>
+<!-- CTA Cluster -->
+<div class="flex flex-col sm:flex-row gap-3 mb-8">
+<a class="inline-flex items-center justify-center px-6 py-3.5 rounded-lg bg-primary-container text-on-primary font-label-lg text-label-lg shadow-sm hover:opacity-95 active:scale-95 transition-all text-center" href="#catalogo">
+            Ver Creaciones
+            <span class="material-symbols-outlined ml-2 text-base" data-icon="arrow_forward">arrow_forward</span>
+</a>
+<a class="inline-flex items-center justify-center px-6 py-3.5 rounded-lg border border-primary text-primary font-label-lg text-label-lg hover:bg-secondary-container/20 active:scale-95 transition-all text-center" href="#encargos">
+            Encargar a Medida
+          </a>
+</div>
+</div>
+<!-- Hero Visual Composition with Editorial Frame -->
+<div class="relative w-full rounded-xl overflow-hidden warm-shadow border border-outline-variant/20 bg-surface-container-lowest">
+<img class="w-full h-80 object-cover" data-alt="A luxurious artisanal strawberry pavlova centerpiece dessert displayed on an off-white ceramic pedestal. The cake features delicate meringue peaks, whipped Madagascar vanilla cream, organic red currants, glossy raspberries, and micro mint leaves. Warm golden boutique atelier light bathes the confectionery against a warm ivory textured plaster wall." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCEBg6ysLiUeZrKvozUQkjedojXF8Cv3IFkviMHeZA9ogI9pQzfZ2YFfIJUS5ICUchb0RcZHDodTnioNb2t8NPOjCYF8Gegp8Q1-nbJ7h8OIT_4HE4ZSLWMP9gkZBj2egb5iX9P58p6Npik4Sxv3-VJ4WX4fCE3UlCRRY_OfJHvsolEog8SmGRndwHq8Pzia3zlgEfmej_Yt6YIgoC0Jj-k2ZhEXu-5-YtHVg18_V4hOPMKQCYvGfoPeA"/>
+<div class="absolute bottom-3 right-3 bg-surface/90 backdrop-blur-sm px-3.5 py-1.5 rounded-full border border-outline-variant/30 text-primary font-label-md text-label-md flex items-center gap-1.5 shadow-sm">
+<span class="material-symbols-outlined text-sm" data-icon="sparkles">arrow_back_ios_new</span>
+<span>Edición de Temporada</span>
+</div>
+</div>
+</section>
+<!-- Interactive Category Navigation Bar (Horizontal Scroll) -->
+<section class="py-2 mb-6 border-y border-outline-variant/20 bg-surface-container-low/60">
+<div class="flex overflow-x-auto no-scrollbar gap-2.5 px-margin-mobile py-2">
+<button class="flex items-center gap-2 px-4 py-2 rounded-full bg-primary-container text-on-primary font-label-md text-label-md shrink-0 shadow-sm transition-transform active:scale-95">
+<span class="material-symbols-outlined text-base" data-icon="cake">cake</span>
+<span>Tartas de Celebración</span>
+</button>
+<button class="flex items-center gap-2 px-4 py-2 rounded-full bg-surface-container-lowest text-on-surface-variant border border-outline-variant/40 font-label-md text-label-md shrink-0 hover:text-primary transition-all active:scale-95">
+<span class="material-symbols-outlined text-base" data-icon="cookie">cookie</span>
+<span>Pastelería Fina</span>
+</button>
+<button class="flex items-center gap-2 px-4 py-2 rounded-full bg-surface-container-lowest text-on-surface-variant border border-outline-variant/40 font-label-md text-label-md shrink-0 hover:text-primary transition-all active:scale-95">
+<span class="material-symbols-outlined text-base" data-icon="restaurant_menu">restaurant_menu</span>
+<span>Cheesecakes Gourmet</span>
+</button>
+<button class="flex items-center gap-2 px-4 py-2 rounded-full bg-surface-container-lowest text-on-surface-variant border border-outline-variant/40 font-label-md text-label-md shrink-0 hover:text-primary transition-all active:scale-95">
+<span class="material-symbols-outlined text-base" data-icon="bakery_dining">bakery_dining</span>
+<span>Bollería Artesanal</span>
+</button>
+<button class="flex items-center gap-2 px-4 py-2 rounded-full bg-surface-container-lowest text-on-surface-variant border border-outline-variant/40 font-label-md text-label-md shrink-0 hover:text-primary transition-all active:scale-95">
+<span class="material-symbols-outlined text-base" data-icon="eco">eco</span>
+<span>Sin Gluten &amp; Vegano</span>
+</button>
+</div>
+</section>
+<!-- Best Sellers Showcase -->
+<section class="px-margin-mobile mb-14" id="catalogo">
+<div class="flex items-end justify-between mb-6">
+<div>
+<span class="font-label-md text-label-md text-secondary block mb-1">Selección Exclusiva</span>
+<h2 class="font-headline-lg-mobile text-headline-lg-mobile text-primary">Creaciones Destacadas</h2>
+</div>
+<a class="font-label-md text-label-md text-primary hover:underline flex items-center" href="#contacto">
+          Ver carta
+          <span class="material-symbols-outlined text-sm ml-0.5" data-icon="chevron_right">chevron_right</span>
+</a>
+</div>
+<!-- Cards Grid / Asymmetric Stack -->
+<div class="space-y-6">
+<!-- Item 1: Pavlova -->
+<article class="bg-surface-container-lowest rounded-xl overflow-hidden warm-shadow border border-outline-variant/20 flex flex-col">
+<div class="relative h-60 w-full overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="A delicate and crisp Pavlova cake crowned with velvety Madagascar bourbon vanilla whipped chantilly cream and freshly harvested wild blackberries, red currants, and raspberries. Beautifully styled on a matte stone platter with natural morning window lighting, highlighting the contrast of glossy berries and powdered sugar." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD6aki4hk1NiLoEa7CPRxDOjtk8J_vnplNu-RkPlfRcq792TSf2eUpu-Ka7Scp-lasrkU76F1Sm1hTYhnot41p95S2FDnisvwvTczYpa0CYmk2L9Hy0KB3McrKi8ZwCnD2c5ewFgRPC_URBoWWzgl0-znm1TArcEgOa-PwenU3mbZrW42w8HZA5lpfqVfyWLzcg5grJ7DcL9IsEH3RlySSnZeS_zYTj11TnvcOd0B8nuZSBkxkA9gDf6g"/>
+<span class="absolute top-3 left-3 bg-surface-container-lowest/90 backdrop-blur-sm text-primary font-label-md text-label-md px-3 py-1 rounded-full shadow-sm">
+              Favorito Novias
+            </span>
+</div>
+<div class="p-5 flex flex-col flex-1 justify-between">
+<div>
+<div class="flex justify-between items-baseline mb-1">
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Pavlova Frutos Rojos &amp; Vainilla Bourbon</h3>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant mb-3">
+                Merengue crujiente por fuera y corazón tierno de nube, montada con crema chantilly de vainilla bourbon pura y frutos del bosque macerados al limón.
+              </p>
+<div class="flex flex-wrap gap-1.5 mb-4">
+<span class="px-2.5 py-0.5 rounded-full bg-surface-container text-on-surface-variant font-label-md text-label-md">Vainilla Madagascar</span>
+<span class="px-2.5 py-0.5 rounded-full bg-surface-container text-on-surface-variant font-label-md text-label-md">Frutos silvestres</span>
+<span class="px-2.5 py-0.5 rounded-full bg-surface-container text-on-surface-variant font-label-md text-label-md">Sin Gluten</span>
+</div>
+</div>
+<div class="pt-3 border-t border-outline-variant/20 flex items-center justify-between">
+<span class="font-price-display text-price-display text-primary">38,50 €</span>
+<div class="flex items-center gap-2">
+<a class="px-4 py-2 rounded-lg bg-primary-container text-on-primary font-label-md text-label-md hover:bg-primary transition-colors active:scale-95" href="https://wa.me/34600000000?text=Hola%20Laura,%20quiero%20encargar%20la%20Pavlova">
+                  Pedir Ahora
+                </a>
+</div>
+</div>
+</div>
+</article>
+<!-- Item 2: Cheesecake -->
+<article class="bg-surface-container-lowest rounded-xl overflow-hidden warm-shadow border border-outline-variant/20 flex flex-col">
+<div class="relative h-60 w-full overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="A creamy, molten baked Basque cheesecake with a caramelized golden surface drizzled with glistening salted butter toffee caramel. A clean slice reveals the silky, custard-like molten core on an artisanal terracotta ceramic dish under soft warm interior lighting in a fine pastry workshop." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA1AWlOjeNz_nnmfO-txhIrjsYvm8mR0cvDlCYarm3yo0LK9klV_ytzmaLw8Py_GKwyzOxgWyylyjgc7i1hqn64t2rIYKW0WE9LsJH_OxKb1KkePPNUW2RTNgaAhmX3tkHdOvDtKqLSvWeGCLp_nX4OnUUcH-5H_S3ja_j9CsmjjV2YjP7evlc6q6RgHXJh-0gbYkIUmMej_G6BTqMBxQ6uoRbdqapH5BSFYHI8uDZkE_M4dlK9tUZdQA"/>
+<span class="absolute top-3 left-3 bg-surface-container-lowest/90 backdrop-blur-sm text-primary font-label-md text-label-md px-3 py-1 rounded-full shadow-sm">
+              Top Ventas
+            </span>
+</div>
+<div class="p-5 flex flex-col flex-1 justify-between">
+<div>
+<div class="flex justify-between items-baseline mb-1">
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Cheesecake Fluida al Horno con Toffee</h3>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant mb-3">
+                Quesos artesanos cremosos con cocción suave que conserva el centro fundente. Acompañada con salsa tibia de toffee a la sal de Guérande.
+              </p>
+<div class="flex flex-wrap gap-1.5 mb-4">
+<span class="px-2.5 py-0.5 rounded-full bg-surface-container text-on-surface-variant font-label-md text-label-md">Queso Idiazábal suave</span>
+<span class="px-2.5 py-0.5 rounded-full bg-surface-container text-on-surface-variant font-label-md text-label-md">Toffee casero</span>
+</div>
+</div>
+<div class="pt-3 border-t border-outline-variant/20 flex items-center justify-between">
+<span class="font-price-display text-price-display text-primary">34,00 €</span>
+<div class="flex items-center gap-2">
+<a class="px-4 py-2 rounded-lg bg-primary-container text-on-primary font-label-md text-label-md hover:bg-primary transition-colors active:scale-95" href="https://wa.me/34600000000?text=Hola%20Laura,%20quiero%20encargar%20la%20Cheesecake">
+                  Pedir Ahora
+                </a>
+</div>
+</div>
+</div>
+</article>
+<!-- Item 3: Macarons & Layer Cake (2 Cols on Tablet, single on phone) -->
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+<!-- Macarons -->
+<article class="bg-surface-container-lowest rounded-xl overflow-hidden warm-shadow border border-outline-variant/20 flex flex-col">
+<div class="relative h-48 w-full overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="An elegant collection of pastel-toned artisanal French macarons neatly arranged in a luxury gift box. Flavors include ruby raspberry ganache, roasted Bronte pistachio cream, and tangy passionfruit curds, garnished with delicate gold leaf flakes, bathed in natural soft sunlight." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDKNfbmunz_UJBOuwHWrVsDqMxhWEe879A4zvn1yPaSUbRSzLCCWD4PkEk9E-XyQByaFS6AO4VFGqc25u88bU2kKtbGsEkATCjcHBV86WcMZ-4kgio5EHiEMJYV5CPgMzFqgEzCcrgKdZWqjqdWWBEseHUZmDfjy-g9vqVVUMzXv1vyFc0Uu15alOCLorGESNrrsLuRy_BKAzO4ZBS2BQqxuttx_ZHHbjoKPzgZky-rRbN6AKtsQBSdKw"/>
+</div>
+<div class="p-4 flex flex-col flex-1 justify-between">
+<div>
+<h3 class="font-title-lg text-title-lg text-on-surface mb-1">Caja Degustación Macarons</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-2">
+                  12 unidades: Frambuesa ácida, Pistacho de Bronte y Maracuyá con chocolate blanco Ivoire.
+                </p>
+</div>
+<div class="pt-3 border-t border-outline-variant/20 flex items-center justify-between">
+<span class="font-price-display text-price-display text-primary">22,00 €</span>
+<a class="px-3 py-1.5 rounded-lg border border-primary text-primary font-label-md text-label-md hover:bg-primary hover:text-on-primary transition-colors" href="https://wa.me/34600000000?text=Hola%20Laura,%20quiero%20la%20Caja%20de%20Macarons">
+                  Pedir
+                </a>
+</div>
+</div>
+</article>
+<!-- Layer Cake -->
+<article class="bg-surface-container-lowest rounded-xl overflow-hidden warm-shadow border border-outline-variant/20 flex flex-col">
+<div class="relative h-48 w-full overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="A stately and sophisticated tiered layer cake coated with rich dark chocolate ganache, decorated with roasted caramelized Piedmont hazelnut praline crowns, textured chocolate ribbons, and delicate edible gold specks in an editorial bakery portrait setting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAuNjHcksNOAWRmpQaSMmEilEuo4CI6QgtttewdKDcpt9-TRoMHjbK9yz0o5AT7zRLh4fp0TMjM6F8ge3O_pMWyzBzYqrqjEOQ9Qpf4M6yOqfUMIM0bQW53BWDmQ1U3QAVbM7cSdQIRUAFbTQdyKT9GMLz_MNRS5EWY_KZvmeJ7gUdwi8okLd6FMBmAoqYxXF5-t7L4jCb1UsU-syUDS9losx22D4o1UbfSETaJtgYcWJtdPFwelSy_6A"/>
+</div>
+<div class="p-4 flex flex-col flex-1 justify-between">
+<div>
+<h3 class="font-title-lg text-title-lg text-on-surface mb-1">Layer Cake Chocolate &amp; Praliné</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-2">
+                  Bizcocho húmedo de cacao Valrhona 70%, relleno de praliné crujiente de avellanas y ganache sedosa.
+                </p>
+</div>
+<div class="pt-3 border-t border-outline-variant/20 flex items-center justify-between">
+<span class="font-price-display text-price-display text-primary">42,00 €</span>
+<a class="px-3 py-1.5 rounded-lg border border-primary text-primary font-label-md text-label-md hover:bg-primary hover:text-on-primary transition-colors" href="https://wa.me/34600000000?text=Hola%20Laura,%20quiero%20el%20Layer%20Cake">
+                  Personalizar
+                </a>
+</div>
+</div>
+</article>
+</div>
+</div>
+</section>
+<!-- El Secreto de Nuestro Obrador (About Laura Díaz) -->
+<section class="bg-surface-container-low px-margin-mobile py-12 mb-12 border-y border-outline-variant/20">
+<div class="max-w-xl mx-auto">
+<div class="relative mb-6 rounded-xl overflow-hidden warm-shadow">
+<img class="w-full h-72 object-cover" data-alt="Female pastry chef Laura Díaz warmly smiling inside her bright, sun-drenched artisan baking studio, gently dusting delicate powdered sugar over a bespoke tiered celebration cake. She wears an elegant linen chef apron in natural beige, surrounded by marble counters, copper pastry pots, and wooden baking tools." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDLQNroNIXpXmJ2kUWBQcS1J64x7EY_xrI8wI4zTYIEJi9tfm3bgZJJ7nMHWFQj_6LSMJqIAoNvKWL5qCefM2frwyzgWZJRka-oGYNvsFDJHxLHd7Pxzz741-w5JSLwlUrV9OabFnhr8a9xOJxcVHC1Vv7wNQDJVbb4Kn9Xxg2fHUBp5CluUZ9_URZux0fyTEnNgCtJ_alqyC9k_5uPTqdQ_KLv8lIA-gh3r7EMsncD_P2b_fWDGzHoYw"/>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/60 via-transparent to-transparent flex items-end p-5">
+<span class="font-headline-sm text-headline-sm text-on-primary italic font-serif">"La repostería honesta nace del tiempo y el respeto al producto."</span>
+</div>
+</div>
+<span class="font-label-md text-label-md text-secondary block mb-1">Filosofía &amp; Compromiso</span>
+<h2 class="font-headline-lg-mobile text-headline-lg-mobile text-primary mb-3">El Secreto de Nuestro Obrador</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mb-4 leading-relaxed">
+          Detrás de cada pastel está la firma de Laura Díaz. Formada en alta pastelería francesa y apasionada de la tradición repostera, transformamos recetas clásicas mediante técnicas contemporáneas que reducen azúcares innecesarios para potenciar aromas auténticos.
+        </p>
+<!-- Pillars Bento / Value Cards -->
+<div class="grid grid-cols-2 gap-3 mt-6">
+<div class="p-3.5 bg-surface-container-lowest rounded-lg border border-outline-variant/20">
+<span class="material-symbols-outlined text-primary mb-1 block" data-icon="eco">eco</span>
+<h4 class="font-title-md text-title-md text-on-surface mb-0.5">100% Ecológico</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Harinas molidas a piedra y huevos camperos certificados.</p>
+</div>
+<div class="p-3.5 bg-surface-container-lowest rounded-lg border border-outline-variant/20">
+<span class="material-symbols-outlined text-primary mb-1 block" data-icon="water_drop">water_drop</span>
+<h4 class="font-title-md text-title-md text-on-surface mb-0.5">Mantequilla Pura</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">De pasto natural sin grasas hidrogenadas ni conservantes.</p>
+</div>
+<div class="p-3.5 bg-surface-container-lowest rounded-lg border border-outline-variant/20">
+<span class="material-symbols-outlined text-primary mb-1 block" data-icon="schedule">schedule</span>
+<h4 class="font-title-md text-title-md text-on-surface mb-0.5">Horneado Diario</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Cada encargo se elabora pocas horas antes de tu entrega.</p>
+</div>
+<div class="p-3.5 bg-surface-container-lowest rounded-lg border border-outline-variant/20">
+<span class="material-symbols-outlined text-primary mb-1 block" data-icon="favorite">favorite</span>
+<h4 class="font-title-md text-title-md text-on-surface mb-0.5">Alergias &amp; Dietas</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Opciones seguras adaptadas a intolerancias y preferencias.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Custom Orders: 3 Easy Steps -->
+<section class="px-margin-mobile mb-14" id="encargos">
+<div class="text-center max-w-md mx-auto mb-8">
+<span class="font-label-md text-label-md text-secondary block mb-1">A Tu Medida</span>
+<h2 class="font-headline-lg-mobile text-headline-lg-mobile text-primary mb-2">Encargo en 3 Pasos Sencillos</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">Creamos el centro de mesa dulce para tu boda, cumpleaños o evento corporativo.</p>
+</div>
+<div class="space-y-4">
+<!-- Step 1 -->
+<div class="flex items-start gap-4 p-4 rounded-xl bg-surface-container-lowest border border-outline-variant/20 warm-shadow">
+<div class="w-10 h-10 rounded-full bg-secondary-container text-on-secondary-container flex items-center justify-center font-title-lg text-title-lg shrink-0">
+            1
+          </div>
+<div>
+<h3 class="font-title-md text-title-md text-on-surface mb-1">Cuéntanos tu idea o evento</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+              Indícanos la fecha, número de comensales y el estilo que imaginas (flores naturales, estilo minimalista, rústico o moderno).
+            </p>
+</div>
+</div>
+<!-- Step 2 -->
+<div class="flex items-start gap-4 p-4 rounded-xl bg-surface-container-lowest border border-outline-variant/20 warm-shadow">
+<div class="w-10 h-10 rounded-full bg-secondary-container text-on-secondary-container flex items-center justify-center font-title-lg text-title-lg shrink-0">
+            2
+          </div>
+<div>
+<h3 class="font-title-md text-title-md text-on-surface mb-1">Diseñamos tu tarta y sabores</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+              Elegimos juntos la combinación de bizcochos jugosos, cremas sedosas y toques crujientes mediante una breve cata guiada.
+            </p>
+</div>
+</div>
+<!-- Step 3 -->
+<div class="flex items-start gap-4 p-4 rounded-xl bg-surface-container-lowest border border-outline-variant/20 warm-shadow">
+<div class="w-10 h-10 rounded-full bg-secondary-container text-on-secondary-container flex items-center justify-center font-title-lg text-title-lg shrink-0">
+            3
+          </div>
+<div>
+<h3 class="font-title-md text-title-md text-on-surface mb-1">Recógelo o te lo llevamos</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+              Recogida con cita previa en el obrador o entrega especializada con transporte refrigerado directo al lugar de celebración.
+            </p>
+</div>
+</div>
+</div>
+<!-- Quick Interactive Inscription / Flavor Estimator Card -->
+<div class="mt-6 p-5 rounded-xl bg-surface-container border border-outline-variant/30">
+<h4 class="font-title-md text-title-md text-primary mb-2">Consulta express de disponibilidad</h4>
+<form class="space-y-3" onsubmit="event.preventDefault(); window.location.href='https://wa.me/34600000000?text=Hola%20Laura,%20deseo%20consultar%20disponibilidad%20para%20un%20evento';">
+<div>
+<label class="block font-label-md text-label-md text-on-surface-variant mb-1">Fecha de la celebración</label>
+<input class="w-full px-3 py-2 bg-surface-container-lowest border border-outline-variant rounded-lg text-on-surface text-body-sm focus:border-primary focus:ring-1 focus:ring-primary" type="date"/>
+</div>
+<div>
+<label class="block font-label-md text-label-md text-on-surface-variant mb-1">Número estimado de raciones</label>
+<div class="grid grid-cols-3 gap-2">
+<label class="flex items-center justify-center p-2 rounded-lg border border-outline-variant bg-surface-container-lowest text-label-md font-label-md cursor-pointer hover:border-primary has-[:checked]:border-primary has-[:checked]:bg-secondary-container/20">
+<input checked="" class="sr-only" name="portions" type="radio"/>
+<span>6 - 10</span>
+</label>
+<label class="flex items-center justify-center p-2 rounded-lg border border-outline-variant bg-surface-container-lowest text-label-md font-label-md cursor-pointer hover:border-primary has-[:checked]:border-primary has-[:checked]:bg-secondary-container/20">
+<input class="sr-only" name="portions" type="radio"/>
+<span>12 - 20</span>
+</label>
+<label class="flex items-center justify-center p-2 rounded-lg border border-outline-variant bg-surface-container-lowest text-label-md font-label-md cursor-pointer hover:border-primary has-[:checked]:border-primary has-[:checked]:bg-secondary-container/20">
+<input class="sr-only" name="portions" type="radio"/>
+<span>+25 pax</span>
+</label>
+</div>
+</div>
+<button class="w-full mt-2 py-3 rounded-lg bg-primary-container text-on-primary font-label-lg text-label-lg flex items-center justify-center gap-2 shadow-sm active:scale-95 transition-all" type="submit">
+<span class="material-symbols-outlined text-base" data-icon="event_available">event_available</span>
+            Verificar fecha con Laura
+          </button>
+</form>
+</div>
+</section>
+<!-- Testimonials / Client Love -->
+<section class="px-margin-mobile mb-14">
+<div class="mb-6">
+<span class="font-label-md text-label-md text-secondary block mb-1">Historias Felices</span>
+<h2 class="font-headline-lg-mobile text-headline-lg-mobile text-primary">Opiniones de Clientes</h2>
+</div>
+<!-- Testimonial Slider / Vertical Stack -->
+<div class="space-y-4">
+<!-- Review 1 -->
+<div class="p-5 rounded-xl bg-surface-container-lowest border border-outline-variant/20 warm-shadow">
+<div class="flex text-tertiary-container mb-2">
+<span class="material-symbols-outlined text-sm" data-icon="star" data-weight="fill" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" data-icon="star" data-weight="fill" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" data-icon="star" data-weight="fill" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" data-icon="star" data-weight="fill" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" data-icon="star" data-weight="fill" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface mb-3 italic">
+            "Laura diseñó nuestra tarta nupcial de tres pisos. No sólo era un espectáculo visual con las flores prensadas, sino que los invitados aún recuerdan la esponjosidad y el sabor a vainilla real. Insuperable."
+          </p>
+<div class="flex items-center gap-3">
+<div class="w-9 h-9 rounded-full bg-secondary-container/40 flex items-center justify-center font-bold text-primary text-sm">
+              CM
+            </div>
+<div>
+<p class="font-title-md text-title-md text-on-surface leading-tight">Clara &amp; Mateo</p>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Boda en Finca El Olivo</span>
+</div>
+</div>
+</div>
+<!-- Review 2 -->
+<div class="p-5 rounded-xl bg-surface-container-lowest border border-outline-variant/20 warm-shadow">
+<div class="flex text-tertiary-container mb-2">
+<span class="material-symbols-outlined text-sm" data-icon="star" data-weight="fill" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" data-icon="star" data-weight="fill" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" data-icon="star" data-weight="fill" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" data-icon="star" data-weight="fill" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" data-icon="star" data-weight="fill" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface mb-3 italic">
+            "La tarta de queso fluida con toffee salado es, con diferencia, la mejor que he probado en la ciudad. Nada empalagosa, cremosa al punto exacto. Ya es tradición en cada cumpleaños familiar."
+          </p>
+<div class="flex items-center gap-3">
+<div class="w-9 h-9 rounded-full bg-secondary-container/40 flex items-center justify-center font-bold text-primary text-sm">
+              AR
+            </div>
+<div>
+<p class="font-title-md text-title-md text-on-surface leading-tight">Alejandro Ramos</p>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Cumpleaños 40</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Warm Final CTA / WhatsApp Direct -->
+<section class="px-margin-mobile mb-10" id="contacto">
+<div class="relative rounded-2xl overflow-hidden bg-primary text-on-primary p-7 text-center warm-shadow-lg">
+<div class="relative z-10 max-w-md mx-auto">
+<span class="material-symbols-outlined text-3xl mb-2 text-primary-fixed" data-icon="celebration">celebration</span>
+<h2 class="font-headline-md text-headline-md text-surface-bright mb-2">¿Tienes una fecha especial a la vista?</h2>
+<p class="font-body-md text-body-md text-primary-fixed mb-6">
+            Los encargos para fines de semana se cierran con 48 horas de antelación para garantizar la máxima frescura artesanal.
+          </p>
+<div class="flex flex-col gap-3">
+<a class="inline-flex items-center justify-center gap-2 w-full py-3.5 px-6 rounded-lg bg-surface-bright text-primary font-label-lg text-label-lg shadow hover:bg-white active:scale-95 transition-all" href="https://wa.me/34600000000?text=Hola%20Laura,%20quiero%20hacer%20un%20encargo%20especial" rel="noopener noreferrer" target="_blank">
+<span class="material-symbols-outlined text-lg" data-icon="chat">chat</span>
+              Reservar por WhatsApp
+            </a>
+<a class="inline-flex items-center justify-center gap-1.5 font-label-md text-label-md text-surface-bright/80 hover:text-white pt-1" href="tel:+34910000000">
+<span class="material-symbols-outlined text-sm" data-icon="call">call</span>
+              O llámanos al 910 00 00 00
+            </a>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer (from Shared Components JSON) -->
+<footer class="bg-surface-container-low dark:bg-surface-container-high docked full-width border-t border-outline-variant/30 flat no shadows w-full px-margin-mobile pt-8 pb-24 flex flex-col gap-6 text-center">
+<div>
+<h3 class="font-headline-sm text-headline-sm font-semibold text-primary dark:text-inverse-primary mb-2">
+        Laura Díaz
+      </h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant max-w-sm mx-auto">
+        Pastelería de Autor &amp; Obrador Artesanal. Elaboraciones lentas con alma contemporánea.
+      </p>
+</div>
+<!-- Practical Workshop Info -->
+<div class="grid grid-cols-1 gap-4 text-left max-w-sm mx-auto py-2">
+<div class="flex items-start gap-2.5">
+<span class="material-symbols-outlined text-primary text-lg mt-0.5" data-icon="location_on">location_on</span>
+<div class="text-body-sm font-body-sm text-on-surface-variant">
+<strong class="text-on-surface font-semibold block">Obrador &amp; Punto de Recogida:</strong>
+          Calle de las Delicias 14, 28045 Madrid
+        </div>
+</div>
+<div class="flex items-start gap-2.5">
+<span class="material-symbols-outlined text-primary text-lg mt-0.5" data-icon="schedule">schedule</span>
+<div class="text-body-sm font-body-sm text-on-surface-variant">
+<strong class="text-on-surface font-semibold block">Horario de Obrador:</strong>
+          Martes a Sábado: 09:30 - 19:30 h<br/>
+          Domingos: 10:00 - 14:30 h (Sólo recogidas)
+        </div>
+</div>
+</div>
+<!-- Shared Navigation Links from JSON -->
+<div class="flex flex-wrap justify-center gap-x-4 gap-y-2 text-label-md font-label-md">
+<a class="text-on-surface-variant dark:text-outline-variant hover:text-primary dark:hover:text-primary-fixed transition-colors duration-200" href="#contacto">Horarios de Obrador</a>
+<a class="text-on-surface-variant dark:text-outline-variant hover:text-primary dark:hover:text-primary-fixed transition-colors duration-200" href="#contacto">Ubicación y Recogidas</a>
+<a class="text-on-surface-variant dark:text-outline-variant hover:text-primary dark:hover:text-primary-fixed transition-colors duration-200" href="#encargos">Preguntas Frecuentes</a>
+<a class="text-on-surface-variant dark:text-outline-variant hover:text-primary dark:hover:text-primary-fixed transition-colors duration-200" href="#catalogo">Alérgenos</a>
+<a class="text-on-surface-variant dark:text-outline-variant hover:text-primary dark:hover:text-primary-fixed transition-colors duration-200" href="#">Aviso Legal</a>
+</div>
+<!-- Copyright -->
+<div class="text-body-sm font-body-sm text-on-surface-variant/80 border-t border-outline-variant/20 pt-4">
+      © 2024 Laura Díaz Pastelería de Autor. Todos los derechos reservados.
+    </div>
+</footer>
+<!-- BottomNavBar (from Shared Components JSON) -->
+<nav class="bg-surface-container-lowest/95 backdrop-blur-md dark:bg-surface-container/95 docked full-width bottom-0 shadow-md fixed bottom-0 left-0 w-full z-50 flex justify-around items-center h-16 px-gutter-mobile pb-safe max-w-7xl mx-auto border-t border-outline-variant/15 md:hidden">
+<!-- Tab 1: Inicio (Active State as Landing Home) -->
+<a class="flex flex-col items-center justify-center text-primary dark:text-primary-fixed font-semibold active:scale-90 transition-transform duration-150" href="#">
+<span class="material-symbols-outlined" data-icon="storefront" style="font-variation-settings: 'FILL' 1;">storefront</span>
+<span class="font-label-md text-label-md mt-0.5">Inicio</span>
+</a>
+<!-- Tab 2: Catálogo -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline hover:text-primary dark:hover:text-primary-fixed transition-colors duration-150 active:scale-90 transition-transform" href="#catalogo">
+<span class="material-symbols-outlined" data-icon="cake">cake</span>
+<span class="font-label-md text-label-md mt-0.5">Catálogo</span>
+</a>
+<!-- Tab 3: Encargos -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline hover:text-primary dark:hover:text-primary-fixed transition-colors duration-150 active:scale-90 transition-transform" href="#encargos">
+<span class="material-symbols-outlined" data-icon="auto_fix_high">auto_fix_high</span>
+<span class="font-label-md text-label-md mt-0.5">Encargos</span>
+</a>
+<!-- Tab 4: Contacto -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline hover:text-primary dark:hover:text-primary-fixed transition-colors duration-150 active:scale-90 transition-transform" href="#contacto">
+<span class="material-symbols-outlined" data-icon="chat">chat</span>
+<span class="font-label-md text-label-md mt-0.5">Contacto</span>
+</a>
+</nav>
+</body></html>

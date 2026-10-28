@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html class="h-full bg-slate-50" lang="es">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Refaccionaria Ascencio - Iniciar Sesión</title>
+
+  <!-- SweetAlert2 -->
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+  <!-- Tailwind CSS CDN with forms and container queries plugins -->
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+
+  <!-- Google Fonts: Inter -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&amp;display=swap"
+    rel="stylesheet">
+
+  <!-- Tailwind Config Customization -->
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+          },
+          colors: {
+            brand: {
+              50: '#FEF2F2',
+              100: '#FEE2E2',
+              200: '#FECACA',
+              500: '#EF4444',
+              600: '#DC2626',
+              700: '#B91C1C',
+              800: '#991B1B',
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Custom Typography & Micro-interactions -->
+  <style data-purpose="custom-typography">
+    body {
+      font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+    }
+
+    .input-focus-ring {
+      transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .input-focus-ring:focus-within {
+      border-color: #DC2626;
+      box-shadow: 0 0 0 4px rgba(220, 38, 38, 0.12);
+    }
+  </style>
+</head>
+
+<body class="h-full text-slate-800 antialiased flex flex-col justify-between selection:bg-red-500 selection:text-white">
+  <script>
+    // Borrar cualquier sesión previa
+    localStorage.removeItem("correo_usuario");
+  </script>
+
+  <!-- BEGIN: MainHeader -->
+  <header class="w-full bg-white border-b border-slate-200/80 px-6 sm:px-10 py-4.5 shrink-0 z-20">
+    <div class="max-w-7xl mx-auto flex items-center justify-between">
+      <!-- Logo & Brand Identity matching system screen -->
+      <a href="Landing_Page.html" class="flex items-center gap-3 group text-inherit no-underline">
+        <div
+          class="w-10 h-10 rounded-xl bg-brand-600 flex items-center justify-center text-white shadow-md shadow-brand-600/20 group-hover:scale-105 transition-transform">
+          <!-- 3D Isometric Box Icon -->
+          <svg class="w-6 h-6 stroke-[2.2]" fill="none" stroke="currentColor" stroke-linecap="round"
+            stroke-linejoin="round" viewBox="0 0 24 24">
+            <path
+              d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z">
+            </path>
+            <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
+            <line x1="12" x2="12" y1="22.08" y2="12"></line>
+          </svg>
+        </div>
+        <div>
+          <div class="flex items-center gap-2">
+            <span class="text-xl font-bold tracking-tight text-slate-900 leading-none">Refaccionaria Ascencio</span>
+            <span
+              class="inline-flex items-center px-2 py-0.5 rounded text-[10px] font-semibold bg-red-50 text-brand-700 border border-brand-200">
+              PANEL
+            </span>
+          </div>
+          <p class="text-xs text-slate-500 font-medium mt-0.5">Control Central &amp; Logística</p>
+        </div>
+      </a>
+
+      <!-- System Status and Direct Support link -->
+      <div class="flex items-center gap-4 sm:gap-6">
+        <div class="hidden md:flex items-center gap-2 text-xs text-slate-500 font-medium">
+          <span class="relative flex h-2 w-2">
+            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+            <span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+          </span>
+          <span>Servidores estables • v2.4.8</span>
+        </div>
+      </div>
+    </div>
+  </header>
+  <!-- END: MainHeader -->
+
+  <!-- BEGIN: MainContent -->
+  <main class="flex-1 flex items-center justify-center p-4 sm:p-6 lg:p-12">
+    <div
+      class="w-full max-w-5xl grid grid-cols-1 lg:grid-cols-12 bg-white rounded-3xl shadow-xl shadow-slate-200/60 border border-slate-200 overflow-hidden">
+      <!-- Hero / Information Side Panel -->
+      <section
+        class="hidden lg:flex lg:col-span-5 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-white p-10 flex-col justify-between relative overflow-hidden"
+        data-purpose="context-panel">
+        <!-- Background decorative ambient circles -->
+        <div class="absolute -right-20 -top-20 w-80 h-80 rounded-full bg-brand-600/20 blur-3xl pointer-events-none">
+        </div>
+        <div class="absolute -left-16 -bottom-16 w-60 h-60 rounded-full bg-brand-700/20 blur-2xl pointer-events-none">
+        </div>
+
+        <div class="relative z-10">
+          <div
+            class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 backdrop-blur-md border border-white/15 text-xs text-white/90 font-medium mb-6">
+            <svg class="w-3.5 h-3.5 text-brand-500" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M12 2L1 21h22L12 2zm0 3.99L19.53 19H4.47L12 5.99zM11 10h2v4h-2zm0 6h2v2h-2z"></path>
+            </svg>
+            Acceso Corporativo Seguro
+          </div>
+          <h2 class="text-3xl font-extrabold tracking-tight text-white leading-tight">
+            Gestión inteligente de repuestos.
+          </h2>
+          <p class="mt-3 text-sm text-slate-300 leading-relaxed">
+            Plataforma centralizada de control de inventario, sincronización de almacén y administración de
+            distribuidores en tiempo real.
+          </p>
+        </div>
+
+        <!-- Glassmorphism Live Dashboard Badges matching System Stats -->
+        <div class="relative z-10 space-y-3.5 my-8">
+          <!-- Metric Card 1: Distribuidores y Usuarios -->
+          <div
+            class="flex items-center justify-between p-3.5 rounded-2xl bg-white/[0.07] backdrop-blur-md border border-white/10 shadow-sm">
+            <div class="flex items-center gap-3">
+              <div
+                class="w-10 h-10 rounded-xl bg-brand-600/30 text-brand-400 flex items-center justify-center border border-brand-500/30">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path
+                    d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"
+                    stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+                </svg>
+              </div>
+              <div>
+                <p class="text-xs text-slate-300 font-medium">Usuarios Registrados</p>
+                <p class="text-base font-bold text-white leading-none mt-1">Acceso con Credenciales</p>
+              </div>
+            </div>
+            <span
+              class="text-[11px] font-semibold text-emerald-400 bg-emerald-500/15 px-2 py-1 rounded-md border border-emerald-500/20">
+              Activo
+            </span>
+          </div>
+
+          <!-- Metric Card 2: Rendimiento -->
+          <div
+            class="flex items-center justify-between p-3.5 rounded-2xl bg-white/[0.07] backdrop-blur-md border border-white/10 shadow-sm">
+            <div class="flex items-center gap-3">
+              <div
+                class="w-10 h-10 rounded-xl bg-emerald-500/20 text-emerald-400 flex items-center justify-center border border-emerald-500/30">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" stroke-linecap="round" stroke-linejoin="round"
+                    stroke-width="2"></path>
+                </svg>
+              </div>
+              <div>
+                <p class="text-xs text-slate-300 font-medium">Sistema de Inventario</p>
+                <p class="text-base font-bold text-white leading-none mt-1">Conexión Segura</p>
+              </div>
+            </div>
+            <span class="text-[11px] font-semibold text-emerald-400 flex items-center gap-0.5">
+              100% Online
+            </span>
+          </div>
+        </div>
+
+        <!-- Footer Tagline -->
+        <div
+          class="relative z-10 pt-4 border-t border-white/10 flex items-center justify-between text-xs text-slate-400">
+          <span>Refaccionaria Ascencio S.A.</span>
+          <span class="text-brand-400 font-medium">Control de Inventario</span>
+        </div>
+      </section>
+
+      <!-- Login Form Section -->
+      <section class="lg:col-span-7 p-8 sm:p-12 lg:p-14 flex flex-col justify-center" data-purpose="login-form-panel">
+        <!-- Form Header -->
+        <div class="mb-8">
+          <div
+            class="inline-flex items-center gap-2 text-xs font-semibold tracking-wider uppercase text-brand-600 bg-red-50 px-2.5 py-1 rounded-md mb-2">
+            Autenticación de Usuarios
+          </div>
+          <h1 class="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight">
+            Bienvenido de nuevo
+          </h1>
+          <p class="text-sm text-slate-500 mt-1.5">
+            Inicia sesión para gestionar tus productos, stock y distribuidores.
+          </p>
+        </div>
+
+        <!-- Main Form -->
+        <form enctype="multipart/form-data" id="loginnn" method="post" class="space-y-5">
+          <input id="id_login" name="id" type="hidden" value="" />
+
+          <!-- Email Input Group -->
+          <div>
+            <label class="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-1.5" for="correo">
+              Correo Electrónico
+            </label>
+            <div class="input-focus-ring relative rounded-xl border border-slate-300 bg-white transition-all shadow-sm">
+              <div class="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-slate-400">
+                <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path
+                    d="M16 12a4 4 0 10-8 0 4 4 0 008 0zm0 0v1.5a2.5 2.5 0 005 0V12a9 9 0 10-9 9m4.5-1.206a8.959 8.959 0 01-4.5 1.207"
+                    stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"></path>
+                </svg>
+              </div>
+              <input
+                class="block w-full rounded-xl border-0 py-3.5 pl-11 pr-4 text-slate-900 placeholder:text-slate-400 text-sm focus:ring-0 sm:leading-6 font-medium"
+                id="correo" name="correo" placeholder="nombre@empresa.com" required="" type="email"
+                autocomplete="email">
+            </div>
+          </div>
+
+          <!-- Password Input Group -->
+          <div>
+            <div class="flex items-center justify-between mb-1.5">
+              <label class="block text-xs font-bold uppercase tracking-wider text-slate-700" for="password">
+                Contraseña
+              </label>
+            </div>
+            <div class="input-focus-ring relative rounded-xl border border-slate-300 bg-white transition-all shadow-sm">
+              <div class="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-slate-400">
+                <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path
+                    d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"
+                    stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"></path>
+                </svg>
+              </div>
+              <input
+                class="block w-full rounded-xl border-0 py-3.5 pl-11 pr-11 text-slate-900 placeholder:text-slate-400 text-sm focus:ring-0 sm:leading-6 font-medium"
+                id="password" name="password" placeholder="Ingresa tu contraseña" required="" type="password"
+                autocomplete="current-password">
+              <!-- Toggle Password Visibility Button -->
+              <button aria-label="Mostrar u ocultar contraseña"
+                class="absolute inset-y-0 right-0 pr-3.5 flex items-center text-slate-400 hover:text-slate-600 focus:outline-none"
+                id="togglePassword" type="button">
+                <svg class="h-5 w-5" fill="none" id="eyeIcon" stroke="currentColor" viewBox="0 0 24 24">
+                  <path d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" stroke-linecap="round" stroke-linejoin="round"
+                    stroke-width="1.8"></path>
+                  <path
+                    d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"
+                    stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"></path>
+                </svg>
+              </button>
+            </div>
+          </div>
+
+          <!-- Remember Device & Security Row -->
+          <div class="flex items-center justify-between pt-1">
+            <label class="flex items-center gap-2.5 cursor-pointer">
+            </label>
+            <span class="inline-flex items-center gap-1 text-[11px] font-medium text-slate-400">
+              <svg class="w-3.5 h-3.5 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path
+                  d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"
+                  stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+              </svg>
+              SSL 256-Bit
+            </span>
+          </div>
+
+          <!-- Primary Submit Button -->
+          <div class="pt-2">
+            <button
+              class="w-full flex items-center justify-center gap-2 py-3.5 px-6 rounded-xl text-white font-semibold text-sm bg-brand-600 hover:bg-brand-700 active:bg-brand-800 shadow-md shadow-brand-600/30 transition-all focus:outline-none focus:ring-4 focus:ring-brand-600/20 group"
+              type="submit">
+              <span>Iniciar Sesión</span>
+              <svg class="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor"
+                viewBox="0 0 24 24">
+                <path d="M14 5l7 7m0 0l-7 7m7-7H3" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2">
+                </path>
+              </svg>
+            </button>
+          </div>
+        </form>
+
+        <!-- Help Notice -->
+        <div class="mt-8 text-center pt-6 border-t border-slate-100">
+          <p class="text-xs text-slate-500">
+            ¿No tienes credenciales asignadas?
+            <a class="font-semibold text-brand-600 hover:underline" href="#contacto-admin">Contacta al Administrador
+              Principal</a>
+          </p>
+        </div>
+      </section>
+    </div>
+  </main>
+  <!-- END: MainContent -->
+
+  <!-- BEGIN: MainFooter -->
+  <footer class="w-full py-4 px-6 text-center text-xs text-slate-400 border-t border-slate-200/70 bg-white/70">
+    <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-2">
+      <p>© 2025 Refaccionaria Ascencio. Todos los derechos reservados.</p>
+      <div class="flex items-center gap-4 text-slate-400 font-medium">
+        <a class="hover:text-slate-600 transition-colors" href="#privacidad">Aviso de Privacidad</a>
+        <span>•</span>
+        <a class="hover:text-slate-600 transition-colors" href="#terminos">Términos de Servicio</a>
+        <span>•</span>
+        <a class="hover:text-slate-600 transition-colors" href="#seguridad">Protocolos de Seguridad</a>
+      </div>
+    </div>
+  </footer>
+  <!-- END: MainFooter -->
+
+  <!-- BEGIN: InteractiveHandlers & Functionality -->
+  <script>
+    // Mostrar u ocultar contraseña
+    const toggleBtn = document.getElementById('togglePassword');
+    const passwordInput = document.getElementById('password');
+
+    if (toggleBtn && passwordInput) {
+      toggleBtn.addEventListener('click', function () {
+        const isPassword = passwordInput.getAttribute('type') === 'password';
+        passwordInput.setAttribute('type', isPassword ? 'text' : 'password');
+
+        toggleBtn.classList.toggle('text-brand-600', isPassword);
+        toggleBtn.classList.toggle('text-slate-400', !isPassword);
+      });
+    }
+
+    // Funcionalidad intacta de inicio de sesión
+    document.getElementById("loginnn").addEventListener("submit", function (event) {
+      event.preventDefault(); // Evita recarga de página
+
+      let correo = document.getElementById("correo").value;
+      let password = document.getElementById("password").value;
+
+      fetch("http://127.0.0.1:8000/api/inicio_de_sesion", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          correo: correo,
+          password: password
+        })
+      })
+        .then(response => response.json())
+        .then(data => {
+          if (data.message_exitoso) {
+            localStorage.setItem("nombre_usuario", data.nombre);
+            Swal.fire({
+              title: 'Inicio de sesión exitoso',
+              text: '¡Bienvenido!',
+              icon: 'success',
+              confirmButtonColor: '#DC2626'
+            }).then(() => {
+              window.location.href = 'Sidebar.html';
+            });
+          } else if (data.message) {
+            Swal.fire({
+              icon: "error",
+              title: "Acceso denegado",
+              text: "Correo o Contraseña incorrectos. Intente de nuevo.",
+              confirmButtonColor: '#DC2626'
+            });
+          }
+        })
+        .catch(error => {
+          console.error("Error:", error);
+          Swal.fire({
+            icon: "error",
+            title: "Error de conexión",
+            text: "No se pudo conectar con el servidor.",
+            confirmButtonColor: '#DC2626'
+          });
+        });
+    });
+  </script>
+  <!-- END: InteractiveHandlers -->
+</body>
+
+</html>

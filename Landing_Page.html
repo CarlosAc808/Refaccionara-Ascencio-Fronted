@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html class="h-full scroll-smooth bg-slate-50" lang="es">
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <title>REFACCIONARIA ASCENCIO | Ingeniería de Precisión</title>
+
+  <!-- SweetAlert2 -->
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+  <!-- Tailwind CSS CDN with forms and container queries plugins -->
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+
+  <!-- Google Fonts: Inter -->
+  <link href="https://fonts.googleapis.com" rel="preconnect" />
+  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&amp;display=swap"
+    rel="stylesheet" />
+
+  <!-- Material Symbols -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+    rel="stylesheet" />
+
+  <!-- Tailwind Config Customization matching stitch design -->
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+          },
+          colors: {
+            brand: {
+              50: '#FEF2F2',
+              100: '#FEE2E2',
+              200: '#FECACA',
+              500: '#EF4444',
+              600: '#DC2626',
+              700: '#B91C1C',
+              800: '#991B1B',
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Custom Typography & Micro-interactions -->
+  <style>
+    body {
+      font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+    }
+
+    .input-focus-ring {
+      transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .input-focus-ring:focus-within {
+      border-color: #DC2626;
+      box-shadow: 0 0 0 4px rgba(220, 38, 38, 0.12);
+    }
+
+    .blueprint-grid {
+      background-image: radial-gradient(rgba(220, 38, 38, 0.15) 1px, transparent 1px);
+      background-size: 32px 32px;
+    }
+
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    }
+  </style>
+</head>
+
+<body
+  class="min-h-full text-slate-800 antialiased flex flex-col justify-between selection:bg-brand-600 selection:text-white">
+
+  <!-- ==================== HEADER ==================== -->
+  <header
+    class="sticky top-0 z-50 w-full bg-white/95 backdrop-blur-md border-b border-slate-200/80 px-6 sm:px-10 py-4 shrink-0 transition-all">
+    <div class="max-w-7xl mx-auto flex items-center justify-between">
+
+      <!-- Logo & Brand Identity matching stitch style -->
+      <a href="#inicio" class="flex items-center gap-3 group text-inherit no-underline">
+        <div
+          class="w-10 h-10 rounded-xl bg-brand-600 flex items-center justify-center text-white shadow-md shadow-brand-600/20 group-hover:scale-105 transition-transform">
+          <!-- 3D Isometric Box SVG Icon -->
+          <svg class="w-6 h-6 stroke-[2.2]" fill="none" stroke="currentColor" stroke-linecap="round"
+            stroke-linejoin="round" viewBox="0 0 24 24">
+            <path
+              d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z">
+            </path>
+            <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
+            <line x1="12" x2="12" y1="22.08" y2="12"></line>
+          </svg>
+        </div>
+        <div>
+          <div class="flex items-center gap-2">
+            <span class="text-xl font-bold tracking-tight text-slate-900 leading-none">Refaccionaria Ascencio</span>
+            <span
+              class="inline-flex items-center px-2 py-0.5 rounded text-[10px] font-semibold bg-red-50 text-brand-700 border border-brand-200">
+              OFICIAL
+            </span>
+          </div>
+          <p class="text-xs text-slate-500 font-medium mt-0.5">Ingeniería &amp; Respaldo Técnico</p>
+        </div>
+      </a>
+
+      <!-- Navigation Links -->
+      <nav class="hidden md:flex items-center gap-8">
+        <a href="#inicio" class="text-sm font-semibold text-slate-600 hover:text-brand-600 transition-colors">INICIO</a>
+        <a href="#nosotros"
+          class="text-sm font-semibold text-slate-600 hover:text-brand-600 transition-colors">NOSOTROS</a>
+        <a href="#servicios"
+          class="text-sm font-semibold text-slate-600 hover:text-brand-600 transition-colors">SERVICIOS</a>
+        <a href="#contacto"
+          class="text-sm font-semibold text-slate-600 hover:text-brand-600 transition-colors">CONTACTO</a>
+      </nav>
+
+      <!-- Action Button / Login -->
+      <div class="flex items-center gap-3">
+        <a href="Login.html"
+          class="group inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-white font-semibold text-sm bg-brand-600 hover:bg-brand-700 active:bg-brand-800 shadow-md shadow-brand-600/25 hover:shadow-lg hover:shadow-brand-600/35 hover:-translate-y-0.5 active:translate-y-0 transition-all duration-200">
+          <span>Login</span>
+          <svg class="w-4 h-4 transition-transform duration-200 group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path d="M14 5l7 7m0 0l-7 7m7-7H3" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2"></path>
+          </svg>
+        </a>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- ==================== MAIN CONTENT ==================== -->
+  <main class="flex-1">
+
+    <!-- HERO SECTION -->
+    <section class="relative min-h-[85vh] bg-slate-950 text-white flex items-center overflow-hidden" id="inicio">
+      <!-- Background Image with Ambient Overlays -->
+      <div class="absolute inset-0 z-0">
+        <img alt="Industrial machinery"
+          class="w-full h-full object-cover opacity-25 filter grayscale contrast-125 scale-105"
+          src="https://lh3.googleusercontent.com/aida-public/AB6AXuBuyLRTWqeRA4zU6Xz_zmSZQOePVPL_s6djfZp9rgJI3gZrTtVTEqVW5iz8LbmFsRcnPf6eK2aTQDDyZ3Gs2q5w31Rlurcc6Pp3P2MZ_6DFzrTlYnfBlwU9l1P6aRwIFpAaR2tPcsULyxfMZkEZGKvbGbotZKZJTdKQQDpmLPFCCQexawtZJ63dU1ZatgeyMZY2Xl1m3X7PXf0OeC84Ga7mci9ClRVwoj2N-iP-Vcg-D4TUfvKH56BjcLPZyEh1xUTxCdKKCVxa3BJM" />
+        <div class="absolute inset-0 bg-gradient-to-r from-slate-950 via-slate-950/85 to-transparent"></div>
+        <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent"></div>
+        <div class="absolute inset-0 blueprint-grid opacity-30"></div>
+      </div>
+
+      <!-- Ambient Glows -->
+      <div class="absolute -right-20 top-1/4 w-96 h-96 rounded-full bg-brand-600/20 blur-3xl pointer-events-none"></div>
+      <div class="absolute left-1/3 -bottom-20 w-80 h-80 rounded-full bg-brand-700/15 blur-3xl pointer-events-none">
+      </div>
+
+      <!-- Hero Content -->
+      <div class="relative z-10 max-w-7xl mx-auto px-6 sm:px-10 py-20 lg:py-28 w-full">
+        <div class="max-w-3xl">
+
+          <!-- Badge -->
+          <div
+            class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-brand-600/20 text-brand-400 border border-brand-500/30 text-xs font-semibold uppercase tracking-wider mb-6 backdrop-blur-md">
+            <span class="w-2 h-2 rounded-full bg-brand-500 animate-pulse"></span>
+            Ingeniería de Precisión Industrial
+          </div>
+
+          <!-- Main Title -->
+          <h1 class="text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-white leading-[1.05] mb-6">
+            REFACCIONARIA <br />
+            <span class="text-brand-500">ASCENCIO</span>
+          </h1>
+
+          <!-- Description -->
+          <p class="text-base sm:text-xl text-slate-300 font-normal leading-relaxed mb-10 max-w-2xl">
+            Ingeniería de precisión y respaldo técnico especializado en la reparación de motores y compresores
+            industriales. 25 años manteniendo el pulso de la industria.
+          </p>
+
+          <!-- Action Buttons -->
+          <div class="flex flex-wrap items-center gap-4">
+            <a href="#contacto"
+              class="inline-flex items-center justify-center gap-2 py-3.5 px-7 rounded-xl text-white font-semibold text-sm bg-brand-600 hover:bg-brand-700 active:bg-brand-800 shadow-lg shadow-brand-600/30 transition-all">
+              <span>Solicitar Diagnóstico</span>
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path d="M14 5l7 7m0 0l-7 7m7-7H3" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+                </path>
+              </svg>
+            </a>
+            <a href="#servicios"
+              class="inline-flex items-center justify-center gap-2 py-3.5 px-7 rounded-xl text-slate-300 hover:text-white font-semibold text-sm bg-white/10 hover:bg-white/15 border border-white/15 backdrop-blur-md transition-all">
+              <span>Ver Servicios</span>
+            </a>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Floating Tech Specs in Hero -->
+    </section>
+
+    <!-- ==================== NOSOTROS ==================== -->
+    <section class="py-20 lg:py-28 bg-white border-b border-slate-200" id="nosotros">
+      <div class="max-w-7xl mx-auto px-6 sm:px-10">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+
+          <!-- Text Content -->
+          <div class="lg:col-span-7">
+            <div
+              class="inline-flex items-center gap-2 text-xs font-semibold tracking-wider uppercase text-brand-600 bg-red-50 px-2.5 py-1 rounded-md mb-3">
+              Trayectoria y Compromiso
+            </div>
+
+            <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight mb-6">
+              PRECISIÓN EN CADA PIEZA
+            </h2>
+
+            <div class="space-y-4 text-slate-600 text-base sm:text-lg leading-relaxed">
+              <p class="font-semibold text-slate-900 text-lg">
+                Somos una empresa con más de 25 años de experiencia.
+              </p>
+              <p>
+                Refaccionaria Ascencio se dedica a la venta y reparación de motores, compresores y equipo industrial.
+                También contamos con una refaccionaria equipada con una amplia variedad de refacciones de alta calidad,
+                para satisfacer las exigencias del sector industrial.
+              </p>
+              <p>
+                Aplicamos tecnología de punta y métodos actualizados, respaldados por personal capacitado, garantizando
+                así un servicio eficiente y confiable.
+              </p>
+            </div>
+
+            <!-- Stats Bar -->
+            <div class="grid grid-cols-2 gap-6 pt-8 mt-8 border-t border-slate-200">
+              <div class="p-4 rounded-2xl bg-slate-50 border border-slate-200/80">
+                <span class="block text-4xl sm:text-5xl font-black text-brand-600">25+</span>
+                <span class="text-xs font-bold uppercase tracking-wider text-slate-500 mt-1 block">Años de
+                  Trayectoria</span>
+              </div>
+              <div class="p-4 rounded-2xl bg-slate-50 border border-slate-200/80">
+                <span class="block text-4xl sm:text-5xl font-black text-brand-600">100%</span>
+                <span class="text-xs font-bold uppercase tracking-wider text-slate-500 mt-1 block">Calidad
+                  Garantizada</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Image Card -->
+          <div class="lg:col-span-5">
+            <div
+              class="relative rounded-3xl overflow-hidden shadow-2xl shadow-slate-300/50 border border-slate-200 group">
+              <img alt="Mechanical components"
+                class="w-full aspect-[4/5] object-cover group-hover:scale-105 transition-transform duration-700"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuBO00DpU6pEDcA5Ji9c91c6Cq-rAvZEndyV3y8Hl0IgX0frxzgWnwEGwRbXsExknGSAEnO3sg-GnSQ8g812-10aGIHsOvzMd7crnS1TGKlbDSqlu8OIJPN3JlA1VAUdYljGZhDz0HK3qfi3xkfcq6V4QE4QMssvnOWf19wKaxMa8_B5Ji9xiW_dEtC58x6tHE0RMWNgkVnpM3ycy1scwTAsCXIELiLB8wUXu-p2gLas4Q9m3dtRtzD4y8xK7o-_VZ0PjwUp1iYzR-LT" />
+
+              <!-- Floating Card Label -->
+              <div
+                class="absolute bottom-6 left-6 right-6 p-5 rounded-2xl bg-slate-900/90 backdrop-blur-md border border-white/10 text-white shadow-xl">
+                <p class="text-[10px] tracking-widest font-bold uppercase text-brand-400 mb-1">Technical Diagnosis</p>
+                <p class="font-bold text-base tracking-tight text-white">OPTIMIZACIÓN DE COMPRESORES</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== SERVICIOS ==================== -->
+    <section class="py-20 lg:py-28 bg-slate-50" id="servicios">
+      <div class="max-w-7xl mx-auto px-6 sm:px-10">
+
+        <!-- Header -->
+        <div class="mb-14 max-w-2xl">
+          <div
+            class="inline-flex items-center gap-2 text-xs font-semibold tracking-wider uppercase text-brand-600 bg-red-50 px-2.5 py-1 rounded-md mb-3">
+            Especialización Industrial
+          </div>
+          <h2 class="text-3xl sm:text-5xl font-extrabold text-slate-900 tracking-tight leading-tight">
+            NUESTROS SERVICIOS Y <br />
+            <span class="text-brand-600">EJEMPLOS DE TRABAJO</span>
+          </h2>
+          <div class="w-20 h-1.5 bg-brand-600 rounded-full mt-4"></div>
+        </div>
+
+        <!-- Bento Grid matching stitch architecture -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-6">
+
+          <!-- Feature Large Card (Span 4 cols) -->
+          <div
+            class="lg:col-span-4 relative rounded-3xl overflow-hidden shadow-lg shadow-slate-200/50 border border-slate-200 bg-slate-900 min-h-[420px] flex flex-col justify-end group">
+            <img alt="Workshop"
+              class="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:scale-105 transition-transform duration-700"
+              src="Gemini_Generated_Image_772jxt772jxt772j.png" />
+            <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/70 to-transparent"></div>
+
+            <div class="relative z-10 p-8 sm:p-10">
+              <span
+                class="inline-flex items-center px-2.5 py-1 rounded text-xs font-semibold bg-brand-600 text-white mb-3">
+                Servicio Principal
+              </span>
+              <h3 class="text-2xl sm:text-3xl font-extrabold text-white mb-2">
+                Reparación Integral de Motores
+              </h3>
+              <p class="text-slate-300 text-sm sm:text-base max-w-xl">
+                Diagnóstico avanzado y reconstrucción de motores de alta capacidad bajo estándares internacionales.
+              </p>
+            </div>
+          </div>
+
+          <!-- Feature Small 1: REPARACIÓN DE MOTORES -->
+          <div
+            class="lg:col-span-2 p-8 rounded-3xl bg-white border border-slate-200 shadow-md shadow-slate-200/40 hover:shadow-xl hover:border-brand-200 transition-all flex flex-col justify-between">
+            <div>
+              <div
+                class="w-12 h-12 rounded-2xl bg-brand-50 text-brand-600 border border-brand-100 flex items-center justify-center mb-6">
+                <span class="material-symbols-outlined text-2xl">electric_bolt</span>
+              </div>
+              <h3 class="text-lg font-bold text-slate-900 mb-2">REPARACIÓN DE MOTORES</h3>
+              <p class="text-slate-600 text-sm leading-relaxed">
+                Motor eléctrico con embobinado recalentado y pasará a su embobinado nuevo.
+              </p>
+            </div>
+            <div class="pt-6 mt-6 border-t border-slate-100 flex items-center text-xs font-semibold text-brand-600">
+              <span>Embobinado de Precisión</span>
+            </div>
+          </div>
+
+          <!-- Feature Small 2: MANTENIMIENTO DE COMPRESORES -->
+          <div
+            class="lg:col-span-2 p-8 rounded-3xl bg-white border border-slate-200 shadow-md shadow-slate-200/40 hover:shadow-xl hover:border-brand-200 transition-all flex flex-col justify-between">
+            <div>
+              <div
+                class="w-12 h-12 rounded-2xl bg-brand-50 text-brand-600 border border-brand-100 flex items-center justify-center mb-6">
+                <span class="material-symbols-outlined text-2xl">settings_input_component</span>
+              </div>
+              <h3 class="text-lg font-bold text-slate-900 mb-2">MANTENIMIENTO DE COMPRESORES</h3>
+              <p class="text-slate-600 text-sm leading-relaxed">
+                Mantenimiento con su balero del cigüeñal de un cabezal compresor de aire y bomba de aceite.
+              </p>
+            </div>
+            <div class="pt-6 mt-6 border-t border-slate-100 flex items-center text-xs font-semibold text-brand-600">
+              <span>Cabezal y Bomba de Aceite</span>
+            </div>
+          </div>
+
+          <!-- Feature Small 3: RECTIFICACIÓN DE PIEZAS -->
+          <div
+            class="lg:col-span-2 p-8 rounded-3xl bg-white border border-slate-200 shadow-md shadow-slate-200/40 hover:shadow-xl hover:border-brand-200 transition-all flex flex-col justify-between">
+            <div>
+              <div
+                class="w-12 h-12 rounded-2xl bg-brand-50 text-brand-600 border border-brand-100 flex items-center justify-center mb-6">
+                <span class="material-symbols-outlined text-2xl">precision_manufacturing</span>
+              </div>
+              <h3 class="text-lg font-bold text-slate-900 mb-2">RECTIFICACIÓN DE PIEZAS</h3>
+              <p class="text-slate-600 text-sm leading-relaxed">
+                Rectificación de precisión para componentes de motores industriales de alta capacidad.
+              </p>
+            </div>
+            <div class="pt-6 mt-6 border-t border-slate-100 flex items-center text-xs font-semibold text-brand-600">
+              <span>Tolerancias Originales</span>
+            </div>
+          </div>
+
+          <!-- Feature Small 4: DIAGNÓSTICO VIBRACIONAL -->
+          <div
+            class="lg:col-span-2 p-8 rounded-3xl bg-white border border-slate-200 shadow-md shadow-slate-200/40 hover:shadow-xl hover:border-brand-200 transition-all flex flex-col justify-between">
+            <div>
+              <div
+                class="w-12 h-12 rounded-2xl bg-brand-50 text-brand-600 border border-brand-100 flex items-center justify-center mb-6">
+                <span class="material-symbols-outlined text-2xl">vibration</span>
+              </div>
+              <h3 class="text-lg font-bold text-slate-900 mb-2">DIAGNÓSTICO VIBRACIONAL</h3>
+              <p class="text-slate-600 text-sm leading-relaxed">
+                Análisis preventivo para detectar fallas en rodamientos y desalineación en equipos rotativos.
+              </p>
+            </div>
+            <div class="pt-6 mt-6 border-t border-slate-100 flex items-center text-xs font-semibold text-brand-600">
+              <span>Mantenimiento Predictivo</span>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Work Log Block -->
+        <div
+          class="mt-16 p-8 sm:p-12 rounded-3xl bg-white border border-slate-200 shadow-xl shadow-slate-200/60 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+          <div class="lg:col-span-7">
+            <span class="text-xs font-bold uppercase tracking-widest text-brand-600 mb-2 block">Protocolo de
+              Laboratorio</span>
+            <h4 class="text-2xl sm:text-3xl font-extrabold text-slate-900 mb-4">TECNOLOGÍA DE PUNTA EN ACCIÓN</h4>
+            <p class="italic text-slate-600 text-base mb-6 leading-relaxed border-l-4 border-brand-600 pl-4 py-1">
+              "Garantizamos que cada componente que sale de nuestro taller cumpla con las tolerancias de fábrica
+              originales, utilizando métodos de prueba de carga real."
+            </p>
+            <ul class="space-y-3">
+              <li class="flex items-center gap-3 text-sm font-semibold uppercase tracking-wider text-slate-700">
+                <span class="w-2.5 h-2.5 rounded-full bg-brand-600"></span>
+                Análisis vibracional
+              </li>
+              <li class="flex items-center gap-3 text-sm font-semibold uppercase tracking-wider text-slate-700">
+                <span class="w-2.5 h-2.5 rounded-full bg-brand-600"></span>
+                Rectificación de precisión
+              </li>
+              <li class="flex items-center gap-3 text-sm font-semibold uppercase tracking-wider text-slate-700">
+                <span class="w-2.5 h-2.5 rounded-full bg-brand-600"></span>
+                Pruebas hidrostáticas
+              </li>
+            </ul>
+          </div>
+
+          <div class="lg:col-span-5 relative rounded-2xl overflow-hidden shadow-lg border border-slate-200">
+            <img alt="Motor components" class="w-full h-64 sm:h-72 object-cover"
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuBZcQhSNhOqagapJvg0AImgVPku3yJR6b3E4Ynxqe445h_cc6Wpcqs8KyHS8-N3ndsro3PN_r0pvKfcTsKeqWSv8bOWZsU1R3wZxXqRDgtIcbSNW57kZ4ZfoDi1xUtNH97_-g7SkZKCoiqaVtSrMOquN1BNIdwcHp7mzCnv_-to8N6wblDZAgqUgboRssxfdgOzuwhSfW81wrb36DE_xbNoltLvcE44t4kfa3QY6sCtDlvleFGGyDlgVSvtXVsXq62Q9-tcy4VmiR-s" />
+            <div
+              class="absolute top-4 right-4 bg-brand-600 text-white font-mono font-bold text-xs px-3 py-1.5 rounded-lg shadow-md">
+              WORK LOG_01
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==================== CONTACTO ==================== -->
+    <section class="py-20 lg:py-28 bg-white relative overflow-hidden" id="contacto">
+      <!-- Ambient Watermark -->
+      <div
+        class="absolute top-0 right-0 opacity-[0.03] pointer-events-none font-black text-slate-900 text-[18rem] leading-none select-none -translate-y-10 translate-x-1/4">
+        CONTACT
+      </div>
+
+      <div class="max-w-7xl mx-auto px-6 sm:px-10 relative z-10">
+        <!-- Section Header -->
+        <div class="text-center max-w-3xl mx-auto mb-14">
+          <div
+            class="inline-flex items-center gap-2 text-xs font-semibold tracking-wider uppercase text-brand-600 bg-red-50 px-3 py-1 rounded-md mb-3">
+            Atención Técnica Inmediata
+          </div>
+          <h2 class="text-3xl sm:text-5xl font-extrabold text-slate-900 tracking-tight leading-tight mb-4">
+            HABLEMOS DE <span class="text-brand-600">SU PROYECTO</span>
+          </h2>
+          <p class="text-slate-600 text-base sm:text-lg leading-relaxed">
+            Nuestro equipo técnico está listo para ofrecerle la solución más eficiente para su maquinaria
+            industrial.
+          </p>
+        </div>
+
+        <!-- 3 Contact Cards Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 mb-10">
+
+          <!-- Card 1: Email -->
+          <div
+            class="p-8 rounded-3xl bg-white border border-slate-200 shadow-lg shadow-slate-200/50 hover:shadow-xl hover:border-brand-200 transition-all flex flex-col justify-between group">
+            <div>
+              <div
+                class="w-14 h-14 rounded-2xl bg-brand-50 text-brand-600 border border-brand-100 flex items-center justify-center mb-6 group-hover:scale-105 transition-transform">
+                <span class="material-symbols-outlined text-3xl">mail</span>
+              </div>
+              <p class="text-xs font-bold uppercase tracking-wider text-slate-400 mb-1">Email Corporativo</p>
+              <h3 class="text-lg font-bold text-slate-900 break-all mb-2">pablo_ascencio@hotmail.com</h3>
+              <p class="text-slate-500 text-sm">Respuesta y cotizaciones técnicas para empresas y distribuidores.</p>
+            </div>
+            <div class="pt-6 mt-6 border-t border-slate-100">
+              <a href="mailto:pablo_ascencio@hotmail.com"
+                class="inline-flex items-center gap-2 text-sm font-bold text-brand-600 hover:text-brand-700 transition-colors">
+                <span>Enviar correo directo</span>
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path d="M14 5l7 7m0 0l-7 7m7-7H3" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+                  </path>
+                </svg>
+              </a>
+            </div>
+          </div>
+
+          <!-- Card 2: Phone -->
+          <div
+            class="p-8 rounded-3xl bg-white border border-slate-200 shadow-lg shadow-slate-200/50 hover:shadow-xl hover:border-brand-200 transition-all flex flex-col justify-between group">
+            <div>
+              <div
+                class="w-14 h-14 rounded-2xl bg-brand-50 text-brand-600 border border-brand-100 flex items-center justify-center mb-6 group-hover:scale-105 transition-transform">
+                <span class="material-symbols-outlined text-3xl">call</span>
+              </div>
+              <p class="text-xs font-bold uppercase tracking-wider text-slate-400 mb-1">Atención Telefónica</p>
+              <h3 class="text-xl font-bold text-slate-900 mb-2">+52 9381893876</h3>
+              <p class="text-slate-500 text-sm">Comunicación inmediata con ingenieros y especialistas de soporte.</p>
+            </div>
+            <div class="pt-6 mt-6 border-t border-slate-100">
+              <a href="tel:+529381893876"
+                class="inline-flex items-center gap-2 text-sm font-bold text-brand-600 hover:text-brand-700 transition-colors">
+                <span>Llamar por teléfono</span>
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path d="M14 5l7 7m0 0l-7 7m7-7H3" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+                  </path>
+                </svg>
+              </a>
+            </div>
+          </div>
+
+          <!-- Card 3: Location -->
+          <div
+            class="p-8 rounded-3xl bg-white border border-slate-200 shadow-lg shadow-slate-200/50 hover:shadow-xl hover:border-brand-200 transition-all flex flex-col justify-between group">
+            <div>
+              <div
+                class="w-14 h-14 rounded-2xl bg-brand-50 text-brand-600 border border-brand-100 flex items-center justify-center mb-6 group-hover:scale-105 transition-transform">
+                <span class="material-symbols-outlined text-3xl">location_on</span>
+              </div>
+              <p class="text-xs font-bold uppercase tracking-wider text-slate-400 mb-1">Centro Técnico</p>
+              <h3 class="text-lg font-bold text-slate-900 mb-2">Ciudad del Carmen</h3>
+              <p class="text-slate-500 text-sm">Campeche, México. Taller equipado para recepción y diagnóstico físico de
+                maquinaria.</p>
+            </div>
+            <div class="pt-6 mt-6 border-t border-slate-100">
+              <span
+                class="inline-flex items-center gap-1.5 text-xs font-semibold text-emerald-600 bg-emerald-50 px-2.5 py-1 rounded-md border border-emerald-200/60">
+                <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
+                Recepción activa
+              </span>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Status Bottom Banner -->
+        <div
+          class="p-6 sm:p-8 rounded-3xl bg-slate-900 text-white flex flex-col sm:flex-row items-center justify-between gap-4 shadow-xl border border-slate-800">
+          <div class="flex items-center gap-4">
+            <span class="relative flex h-3.5 w-3.5 shrink-0">
+              <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+              <span class="relative inline-flex rounded-full h-3.5 w-3.5 bg-emerald-500"></span>
+            </span>
+            <div>
+              <p class="text-sm font-bold text-white leading-none">Taller y laboratorio activos para recepción de equipo</p>
+              <p class="text-xs text-slate-400 mt-1">Lunes a Sábado • Asistencia y diagnóstico técnico especializado</p>
+            </div>
+          </div>
+          <a href="tel:+529381893876"
+            class="shrink-0 inline-flex items-center gap-2 py-2.5 px-5 rounded-xl text-white font-semibold text-xs bg-brand-600 hover:bg-brand-700 active:bg-brand-800 shadow-md shadow-brand-600/30 transition-all">
+            <span>Contactar Ahora</span>
+            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path d="M14 5l7 7m0 0l-7 7m7-7H3" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+              </path>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="bg-slate-900 text-white pt-16 border-t border-slate-800">
+    <div class="max-w-7xl mx-auto px-6 sm:px-10">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 pb-16 border-b border-slate-800">
+
+        <!-- Col 1 -->
+        <div>
+          <div class="flex items-center gap-3 mb-4">
+            <div class="w-8 h-8 rounded-lg bg-brand-600 flex items-center justify-center text-white">
+              <svg class="w-5 h-5 stroke-[2.2]" fill="none" stroke="currentColor" stroke-linecap="round"
+                stroke-linejoin="round" viewBox="0 0 24 24">
+                <path
+                  d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z">
+                </path>
+                <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
+                <line x1="12" x2="12" y1="22.08" y2="12"></line>
+              </svg>
+            </div>
+            <h4 class="font-extrabold text-base text-white tracking-tight">REFACCIONARIA ASCENCIO</h4>
+          </div>
+          <p class="text-xs text-slate-400 leading-relaxed">
+            Líderes en soluciones industriales de alta precisión. Respaldando la operatividad de su empresa por más de
+            dos décadas.
+          </p>
+        </div>
+
+        <!-- Col 2 -->
+        <div>
+          <h4 class="font-bold text-sm text-brand-400 uppercase tracking-wider mb-4">SERVICIOS</h4>
+          <ul class="space-y-2.5 text-xs text-slate-400">
+            <li><a href="#servicios" class="hover:text-white transition-colors">Motores Eléctricos</a></li>
+            <li><a href="#servicios" class="hover:text-white transition-colors">Compresores Industriales</a></li>
+            <li><a href="#servicios" class="hover:text-white transition-colors">Venta de Refacciones</a></li>
+            <li><a href="#servicios" class="hover:text-white transition-colors">Ingeniería Inversa</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3 -->
+        <div>
+          <h4 class="font-bold text-sm text-brand-400 uppercase tracking-wider mb-4">CONTACTO DIRECTO</h4>
+          <ul class="space-y-2.5 text-xs text-slate-400">
+            <li>Email: <a href="mailto:pablo_ascencio@hotmail.com"
+                class="hover:text-white transition-colors">pablo_ascencio@hotmail.com</a></li>
+            <li>Tel: <a href="tel:+529381893876" class="hover:text-white transition-colors">+52 9381893876</a></li>
+            <li>Ubicación: Ciudad del Carmen, Campeche, México</li>
+          </ul>
+        </div>
+
+        <!-- Col 4 -->
+        <div>
+          <h4 class="font-bold text-sm text-brand-400 uppercase tracking-wider mb-4">LEGAL</h4>
+          <ul class="space-y-2.5 text-xs text-slate-400">
+            <li><a href="#privacidad" class="hover:text-white transition-colors">Aviso de Privacidad</a></li>
+            <li><a href="#terminos" class="hover:text-white transition-colors">Términos de Servicio</a></li>
+            <li><a href="#garantia" class="hover:text-white transition-colors">Políticas de Garantía</a></li>
+          </ul>
+        </div>
+
+      </div>
+
+      <!-- Footer Bottom -->
+      <div class="py-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-slate-500">
+        <p>© 2025 REFACCIONARIA ASCENCIO. PRECISION ENGINEERING LEGACY.</p>
+        <p class="text-slate-600">Control Central &amp; Logística Industrial</p>
+      </div>
+    </div>
+  </footer>
+
+</body>
+
+</html>

@@ -1,0 +1,1185 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Refaccionaria Ascencio</title>
+
+    <!-- FUENTES -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <link rel="stylesheet" href="Styles.css">
+</head>
+
+<body>
+
+    <aside class="sidebar">
+
+        <div class="sidebar-content-top">
+            <!-- BRAND & CENTRAL IDENTITY HEADER -->
+            <div class="sidebar-header">
+                <div class="sidebar-brand-box">
+                    <div class="sidebar-brand-icon">
+                        <!-- 3D Isometric Box Icon -->
+                        <svg width="20" height="20" fill="none" stroke="currentColor" stroke-linecap="round"
+                            stroke-linejoin="round" stroke-width="2.2" viewBox="0 0 24 24">
+                            <path
+                                d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z">
+                            </path>
+                            <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
+                            <line x1="12" x2="12" y1="22.08" y2="12"></line>
+                        </svg>
+                        <span class="sidebar-status-dot"></span>
+                    </div>
+                    <div class="sidebar-brand-info">
+                        <h1 id="nombre_usuario" class="sidebar-user-name">Usuario</h1>
+                        <div class="sidebar-brand-meta">
+                            <span class="sidebar-badge-admin">ADMIN PANEL</span>
+                            <span class="sidebar-meta-text">• Matriz</span>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+
+            <!-- NAVIGATION MENU -->
+            <nav class="menu" aria-label="Menú principal">
+                <div id="indicador"></div>
+
+                <!-- Group 1: GESTIÓN PRINCIPAL -->
+                <div class="sidebar-nav-group">
+                    <div class="sidebar-group-title">Gestión Principal</div>
+                    <div class="sidebar-items-wrap">
+                        <!-- Inventario -->
+                        <a href="#" class="item active" onclick="Invetario()">
+                            <div class="item-left">
+                                <svg class="item-icon" width="18" height="18" fill="none" stroke="currentColor"
+                                    stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"
+                                    viewBox="0 0 24 24">
+                                    <path d="m7.5 4.27 9 5.15"></path>
+                                    <path
+                                        d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z">
+                                    </path>
+                                    <path d="m3.3 7 8.7 5 8.7-5"></path>
+                                    <path d="M12 22V12"></path>
+                                </svg>
+                                <span>Inventario</span>
+                            </div>
+                        </a>
+
+                        <!-- Movimientos de Stock -->
+                        <a href="#" class="item" onclick="Movimientos()">
+                            <div class="item-left">
+                                <svg class="item-icon" width="18" height="18" fill="none" stroke="currentColor"
+                                    stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"
+                                    viewBox="0 0 24 24">
+                                    <path d="m17 2 4 4-4 4"></path>
+                                    <path d="M3 11v-1a4 4 0 0 1 4-4h14"></path>
+                                    <path d="m7 22-4-4 4-4"></path>
+                                    <path d="M21 13v1a4 4 0 0 1-4 4H3"></path>
+                                </svg>
+                                <span>Movimientos de Stock</span>
+                            </div>
+                        </a>
+
+                        <!-- Distribuidores -->
+                        <a href="#" class="item" onclick="Distribuidores()">
+                            <div class="item-left">
+                                <svg class="item-icon" width="18" height="18" fill="none" stroke="currentColor"
+                                    stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"
+                                    viewBox="0 0 24 24">
+                                    <line x1="18" x2="18" y1="20" y2="10"></line>
+                                    <line x1="12" x2="12" y1="20" y2="4"></line>
+                                    <line x1="6" x2="6" y1="20" y2="14"></line>
+                                </svg>
+                                <span>Distribuidores</span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Group 2: ACCESO Y CONTROL -->
+                <div class="sidebar-nav-group">
+                    <div class="sidebar-group-title">Acceso y Control</div>
+                    <div class="sidebar-items-wrap">
+                        <!-- Usuarios -->
+                        <a href="#" class="item" onclick="Alertas()">
+                            <div class="item-left">
+                                <svg class="item-icon" width="18" height="18" fill="none" stroke="currentColor"
+                                    stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"
+                                    viewBox="0 0 24 24">
+                                    <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path>
+                                    <circle cx="12" cy="7" r="4"></circle>
+                                </svg>
+                                <span>Usuarios</span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+
+            </nav>
+        </div>
+
+        <!-- FOOTER & SYSTEM DETAILS -->
+        <div class="sidebar-footer">
+
+            <a href="#" class="sidebar-footer-link sidebar-logout-btn" onclick="Cerrar_sesion()">
+                <svg width="16" height="16" fill="none" stroke="currentColor" stroke-linecap="round"
+                    stroke-linejoin="round" stroke-width="1.8" viewBox="0 0 24 24">
+                    <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
+                    <polyline points="16 17 21 12 16 7"></polyline>
+                    <line x1="21" x2="9" y1="12" y2="12"></line>
+                </svg>
+                <span>Cerrar sesión</span>
+            </a>
+
+            <div class="sidebar-footer-version">
+                <span>v2.4.8 Enterprise</span>
+                <span class="sidebar-dot-online"></span>
+            </div>
+        </div>
+
+    </aside>
+
+
+
+
+
+
+    <div id="section_Inventario" style="display: none; margin-left: 260px;">
+        <div class="movimientos-page-wrapper">
+            <!-- Header Section -->
+            <div class="movimientos-header">
+                <div>
+                    <h1 class="movimientos-title">Gestión de Inventario</h1>
+                    <p class="movimientos-subtitle">Administra tus productos, existencias en almacén y categorías.</p>
+                </div>
+                <div style="display: flex; gap: 10px; align-items: center; flex-wrap: wrap;">
+                    <button type="button" class="btn-secundario-inventario" onclick="abrirModalCategoria()">
+                        <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path
+                                d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z"
+                                stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+                        </svg>
+                        Agregar Categoría
+                    </button>
+                    <button type="button" class="btn-registrar-movimiento" onclick="abrirModalProducto()">
+                        <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 4v16m8-8H4" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5">
+                            </path>
+                        </svg>
+                        Agregar Producto
+                    </button>
+                </div>
+            </div>
+
+            <!-- KPI Metrics Grid -->
+            <div class="mov-metrics-grid">
+                <div class="mov-metric-card">
+                    <span class="mov-metric-label">TOTAL PRODUCTOS</span>
+                    <span class="mov-metric-val" id="inv-total-productos">0</span>
+                </div>
+                <div class="mov-metric-card">
+                    <span class="mov-metric-label">STOCK TOTAL</span>
+                    <span class="mov-metric-val text-blue" id="inv-stock-total">0</span>
+                </div>
+                <div class="mov-metric-card">
+                    <span class="mov-metric-label">PRODUCTOS BAJO STOCK</span>
+                    <span class="mov-metric-val text-red" id="inv-bajo-stock">0</span>
+                </div>
+                <div class="mov-metric-card">
+                    <span class="mov-metric-label">CATEGORÍAS ACTIVAS</span>
+                    <span class="mov-metric-val" id="inv-total-categorias">0</span>
+                </div>
+            </div>
+
+            <!-- Search and Filter Bar -->
+            <div class="inv-filter-bar">
+                <div class="inv-search-container">
+                    <svg class="mov-search-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" width="18"
+                        height="18">
+                        <path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" stroke-linecap="round"
+                            stroke-linejoin="round" stroke-width="2"></path>
+                    </svg>
+                    <input type="text" id="buscador" class="mov-search-input"
+                        placeholder="Buscar producto por nombre, descripción o código...">
+                </div>
+                <div class="inv-category-select-wrap">
+                    <label for="filtroCategoria" class="inv-select-label">Categoría:</label>
+                    <div class="mov-select-wrapper" style="width: auto; min-width: 170px;">
+                        <select id="filtroCategoria" class="mov-control mov-select btn-filtro" style="height: 44px;">
+                            <option value="">Todas</option>
+                        </select>
+                        <svg class="mov-select-chevron" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path d="M19 9l-7 7-7-7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+                            </path>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Table Card -->
+            <div class="mov-table-card">
+                <div class="mov-table-wrapper">
+                    <table class="mov-table">
+                        <thead>
+                            <tr>
+                                <th>NOMBRE</th>
+                                <th>DESCRIPCIÓN</th>
+                                <th>PRECIO</th>
+                                <th>CANTIDAD</th>
+                                <th>IMAGEN</th>
+                                <th>ESTADO</th>
+                                <th>CATEGORÍA</th>
+                            </tr>
+                        </thead>
+                        <tbody id="MostrarInventario">
+                            <!-- Populated dynamically by General.js -->
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Table Footer -->
+                <div class="mov-table-footer">
+                    <span id="inv-footer-count">Mostrando 0 productos</span>
+                    <div class="mov-pagination" id="inv-pagination">
+                        <button type="button" class="mov-page-btn" disabled>Anterior</button>
+                        <button type="button" class="mov-page-btn active">1</button>
+                        <button type="button" class="mov-page-btn">Siguiente</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div id="section_Movimientos" style="display: none; margin-left: 260px;">
+        <div class="movimientos-page-wrapper">
+            <!-- Header Section -->
+            <div class="movimientos-header">
+                <div>
+                    <h1 class="movimientos-title">Movimientos de Stock</h1>
+                    <p class="movimientos-subtitle">Registra entradas y salidas de productos y consulta el flujo de
+                        inventario.</p>
+                </div>
+                <div>
+                    <button type="button" class="btn-registrar-movimiento" onclick="focusFormMovimiento()">
+                        <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 4v16m8-8H4" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5">
+                            </path>
+                        </svg>
+                        Registrar Movimiento
+                    </button>
+                </div>
+            </div>
+
+            <!-- KPI Metrics Grid -->
+            <div class="mov-metrics-grid">
+                <div class="mov-metric-card">
+                    <span class="mov-metric-label">TOTAL MOVIMIENTOS</span>
+                    <span class="mov-metric-val" id="metric-total-mov">158</span>
+                </div>
+                <div class="mov-metric-card">
+                    <span class="mov-metric-label">ENTRADAS </span>
+                    <span class="mov-metric-val text-blue" id="metric-entradas-hoy">45</span>
+                </div>
+                <div class="mov-metric-card">
+                    <span class="mov-metric-label">SALIDAS </span>
+                    <span class="mov-metric-val text-red" id="metric-salidas-hoy">28</span>
+                </div>
+                <div class="mov-metric-card">
+                    <span class="mov-metric-label">STOCK DISPONIBLE</span>
+                    <span class="mov-metric-val" id="metric-stock-disponible">1,240</span>
+                </div>
+            </div>
+
+            <!-- Movement Registration Card -->
+            <div class="mov-form-card" id="card_registro_movimiento">
+                <div class="mov-form-card-header">
+                    <div class="mov-form-card-title">
+                        <span class="mov-dot-indicator"></span>
+                        <h2>Nuevo Registro de Movimiento</h2>
+                    </div>
+                    <span class="mov-step-indicator">Paso 1 de 1</span>
+                </div>
+
+                <div class="mov-form-body">
+                    <!-- Left: Type Selector (Cards) -->
+                    <div class="mov-type-selector">
+                        <!-- Entrada Card -->
+                        <button type="button" class="mov-type-card active-entrada" id="Tipo_Entrada"
+                            onclick="Entrada()">
+                            <span class="mov-type-icon icon-entrada">
+                                <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path d="M19 14l-7 7m0 0l-7-7m7 7V3" stroke-linecap="round" stroke-linejoin="round"
+                                        stroke-width="2.5"></path>
+                                </svg>
+                            </span>
+                            <span class="mov-type-title">Entrada</span>
+                            <span class="mov-type-sub">Ingreso al almacén</span>
+                        </button>
+
+                        <!-- Salida Card -->
+                        <button type="button" class="mov-type-card" id="Tipo_Salida" onclick="Salida()">
+                            <span class="mov-type-icon icon-salida">
+                                <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path d="M5 10l7-7m0 0l7 7m-7-7v18" stroke-linecap="round" stroke-linejoin="round"
+                                        stroke-width="2.5"></path>
+                                </svg>
+                            </span>
+                            <span class="mov-type-title">Salida</span>
+                            <span class="mov-type-sub">Despacho / Venta</span>
+                        </button>
+                    </div>
+
+                    <!-- Right: Form Fields -->
+                    <form id="formulario_movimientos" method="post" enctype="multipart/form-data"
+                        class="mov-inputs-grid">
+                        <input type="hidden" id="id_movimiento" name="id" value="">
+                        <input type="hidden" id="tipo_movimiento" name="tipo_movimiento" value="entrada">
+
+                        <!-- Producto -->
+                        <div class="mov-field-col-2">
+                            <label class="mov-label" for="select_producto">Producto</label>
+                            <div class="mov-select-wrapper">
+                                <select name="select_producto" id="select_producto" class="mov-control mov-select">
+                                    <option value="" disabled selected>Selecciona un producto</option>
+                                </select>
+                                <svg class="mov-select-chevron" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path d="M19 9l-7 7-7-7" stroke-linecap="round" stroke-linejoin="round"
+                                        stroke-width="2"></path>
+                                </svg>
+                            </div>
+                        </div>
+
+                        <!-- Cantidad -->
+                        <div class="mov-field-col-1">
+                            <label class="mov-label" for="cantidad_producto">Cantidad</label>
+                            <input type="number" id="cantidad_producto" name="cantidad_producto"
+                                placeholder="Cantidad del producto" class="mov-control">
+                        </div>
+
+                        <!-- Fecha -->
+                        <div class="mov-field-col-1">
+                            <label class="mov-label" for="fecha_movimiento">Fecha</label>
+                            <input type="date" id="fecha_movimiento" name="fecha_movimiento" class="mov-control">
+                        </div>
+
+                        <!-- Distribuidor / Proveedor -->
+                        <div class="mov-field-col-1" id="grupo_proveedor">
+                            <label class="mov-label" for="proveedor_id">Distribuidor / Proveedor</label>
+                            <div class="mov-select-wrapper">
+                                <select name="proveedor_id" id="proveedor_id" class="mov-control mov-select">
+                                    <option value="" disabled selected>Selecciona un proveedor</option>
+                                </select>
+                                <svg class="mov-select-chevron" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path d="M19 9l-7 7-7-7" stroke-linecap="round" stroke-linejoin="round"
+                                        stroke-width="2"></path>
+                                </svg>
+                            </div>
+                        </div>
+
+                        <!-- Precio Unitario -->
+                        <div class="mov-field-col-1" id="grupo_precio">
+                            <label class="mov-label" for="precio_producto">Precio Unitario ($)</label>
+                            <input type="number" step="0.01" id="precio_producto" name="precio_producto"
+                                placeholder="Precio del producto" class="mov-control">
+                        </div>
+
+                        <!-- Actions -->
+                        <div class="mov-form-actions">
+                            <!-- Compatibilidad con JS existente -->
+                            <button type="submit" onclick="Entrada()" class="btn btn-success" id="Enviar_Entrada"
+                                style="display: none;"></button>
+                            <button type="submit" onclick="Salida()" class="btn btn-danger" id="Enviar_Salidas"
+                                style="display: none;"></button>
+
+                            <button type="button" class="mov-btn-limpiar"
+                                onclick="limpiarFormularioMovimiento()">Limpiar</button>
+                            <button type="submit" class="mov-btn-submit" id="btn_submit_mov">Guardar Movimiento</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Search Bar -->
+            <div class="mov-search-bar">
+                <svg class="mov-search-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" width="18"
+                    height="18">
+                    <path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" stroke-linecap="round" stroke-linejoin="round"
+                        stroke-width="2"></path>
+                </svg>
+                <input type="text" id="buscadorMovimientos" class="mov-search-input"
+                    placeholder="Buscar por producto, tipo o fecha...">
+            </div>
+
+            <!-- Movements Table Section -->
+            <div class="mov-table-card">
+                <div class="mov-table-wrapper">
+                    <table class="mov-table">
+                        <thead>
+                            <tr>
+                                <th>TIPO</th>
+                                <th>PRODUCTO</th>
+                                <th>CANTIDAD</th>
+                                <th>FECHA</th>
+                                <th>PRECIO C/U</th>
+                                <th style="text-align: right;">COMPROBANTE</th>
+                            </tr>
+                        </thead>
+                        <tbody id="datosStock">
+                            <!-- Populated dynamically by General.js -->
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Table Pagination Footer -->
+                <div class="mov-table-footer">
+                    <span id="mov-footer-count">Mostrando 0 de 0 movimientos</span>
+                    <div class="mov-pagination" id="mov-pagination">
+                        <button type="button" class="mov-page-btn" id="mov-page-prev" disabled>Anterior</button>
+                        <button type="button" class="mov-page-btn active">1</button>
+                        <button type="button" class="mov-page-btn">2</button>
+                        <button type="button" class="mov-page-btn" id="mov-page-next">Siguiente</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div id="section_Distribuidor" style="display: none; margin-left: 260px;">
+        <div class="dist-page-container">
+            <!-- Header Section -->
+            <header class="dist-header">
+                <div>
+                    <h1 class="dist-title">Gestión de Distribuidores</h1>
+                    <p class="dist-subtitle">Administra tus proveedores logísticos y puntos de suministro.</p>
+                </div>
+                <!-- Action Buttons Group -->
+                <div class="dist-action-buttons">
+                    <button class="dist-btn-export" type="button">
+                        <svg class="dist-btn-icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                            stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24">
+                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                            <polyline points="17 8 12 3 7 8"></polyline>
+                            <line x1="12" x2="12" y1="3" y2="15"></line>
+                        </svg>
+                        <span>Exportar</span>
+                    </button>
+                    <button class="dist-btn-add" type="button" onclick="abrirModal()">
+                        <svg class="dist-btn-icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                            stroke-linejoin="round" stroke-width="2.5" viewBox="0 0 24 24">
+                            <line x1="12" x2="12" y1="5" y2="19"></line>
+                            <line x1="5" x2="19" y1="12" y2="12"></line>
+                        </svg>
+                        <span>Agregar Distribuidor</span>
+                    </button>
+                </div>
+            </header>
+
+            <!-- Metrics Cards Grid -->
+            <section aria-label="Métricas Principales" class="dist-metrics-grid">
+                <!-- Card 1: Total Distribuidores -->
+                <div class="dist-metric-card">
+                    <span class="dist-metric-label">TOTAL DISTRIBUIDORES</span>
+                    <div class="dist-metric-row">
+                        <span class="dist-metric-val" id="dist-total">0</span>
+                        <span class="dist-metric-badge">+2 este mes</span>
+                    </div>
+                </div>
+                <!-- Card 2: Entregas Hoy -->
+                <div class="dist-metric-card">
+                    <span class="dist-metric-label">ENTREGAS HOY</span>
+                    <div class="dist-metric-row">
+                        <span class="dist-metric-val text-blue" id="dist-activos">12</span>
+                    </div>
+                </div>
+                <!-- Card 3: Alertas de Retraso -->
+                <div class="dist-metric-card">
+                    <span class="dist-metric-label">ALERTAS DE RETRASO</span>
+                    <div class="dist-metric-row">
+                        <span class="dist-metric-val text-red" id="dist-cobertura">3</span>
+                    </div>
+                </div>
+                <!-- Card 4: Estado Promedio -->
+                <div class="dist-metric-card">
+                    <span class="dist-metric-label">ESTADO PROMEDIO</span>
+                    <div class="dist-metric-row">
+                        <span class="dist-metric-val" id="dist-estado">98%</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Filter Chips -->
+            <div class="dist-filter-chips">
+                <button class="dist-chip active" type="button" data-filter="todos">
+                    Todos (<span id="chip-total-count">0</span>)
+                </button>
+
+                <button class="dist-chip" type="button" data-filter="activos">
+                    Activos (<span id="chip-activos-count">0</span>)
+                </button>
+            </div>
+
+            <!-- Search Bar & Dropdown Controls -->
+            <div class="dist-controls-bar">
+                <div class="dist-search-wrap">
+                    <svg class="dist-search-icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                        stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <line x1="21" x2="16.65" y1="21" y2="16.65"></line>
+                    </svg>
+                    <input class="dist-search-input" id="buscadorProveedor"
+                        placeholder="Buscar por nombre, ubicación, contacto o RFC..." type="text" />
+                </div>
+                <div class="dist-controls-divider"></div>
+                <div class="dist-select-wrap">
+                    <select id="filtroEstadoDist" class="dist-select">
+                        <option value="">Todos los estados</option>
+                        <option value="activo">Activo</option>
+                        <option value="revision">En revisión</option>
+                        <option value="inactivo">Inactivo</option>
+                    </select>
+                </div>
+                <div class="dist-controls-divider"></div>
+                <div class="dist-select-wrap">
+                    <select id="ordenarDist" class="dist-select">
+                        <option value="">Ordenar por: Recientes</option>
+                        <option value="nombre-asc">Nombre (A - Z)</option>
+                        <option value="nombre-desc">Nombre (Z - A)</option>
+                        <option value="estado">Por Estado</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Distributors Table Card -->
+            <section aria-label="Listado de distribuidores" class="dist-table-card">
+                <div class="dist-table-responsive">
+                    <table class="dist-table">
+                        <thead>
+                            <tr>
+                                <th>DISTRIBUIDOR / EMPRESA</th>
+                                <th>UBICACIÓN</th>
+                                <th>TELÉFONO / CONTACTO</th>
+                                <th>CORREO ELECTRÓNICO</th>
+                                <th>CATEGORÍA</th>
+                                <th>ESTADO</th>
+                                <th style="text-align: right;">ACCIONES</th>
+                            </tr>
+                        </thead>
+                        <tbody id="datosDistribuidor">
+                            <!-- Populated dynamically by General.js -->
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Table Footer -->
+                <div class="dist-table-footer">
+                    <p class="dist-footer-text" id="dist-footer-count">
+                        Mostrando <span id="dist-shown-count" class="font-bold">0</span> de <span id="dist-total-count"
+                            class="font-bold">0</span> distribuidores
+                    </p>
+                    <nav aria-label="Paginación" class="dist-pagination" id="dist-pagination">
+                        <button class="dist-page-nav" type="button">Anterior</button>
+                        <button aria-current="page" class="dist-page-num active" type="button">1</button>
+                        <button class="dist-page-num" type="button">2</button>
+                        <button class="dist-page-nav" type="button">Siguiente</button>
+                    </nav>
+                </div>
+            </section>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div id="section_Alertas" style="display: none; margin-left: 260px;">
+        <div class="user-page-container">
+            <!-- Header Section -->
+            <header class="user-header">
+                <div>
+                    <h1 class="user-title">Gestión de Usuarios</h1>
+                    <p class="user-subtitle">Administra los accesos, cuentas y roles del sistema.</p>
+                </div>
+                <!-- Action Buttons Group -->
+                <div class="user-action-buttons">
+                    <button class="user-btn-export" type="button">
+                        <svg class="user-btn-icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                            stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24">
+                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                            <polyline points="17 8 12 3 7 8"></polyline>
+                            <line x1="12" x2="12" y1="3" y2="15"></line>
+                        </svg>
+                        <span>Exportar</span>
+                    </button>
+                    <button class="user-btn-add" type="button" onclick="abrirModalusuario()">
+                        <svg class="user-btn-icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                            stroke-linejoin="round" stroke-width="2.5" viewBox="0 0 24 24">
+                            <line x1="12" x2="12" y1="5" y2="19"></line>
+                            <line x1="5" x2="19" y1="12" y2="12"></line>
+                        </svg>
+                        <span>Agregar Usuario</span>
+                    </button>
+                </div>
+            </header>
+
+            <!-- Metrics Cards Grid -->
+            <section aria-label="Métricas de Usuarios" class="user-metrics-grid">
+                <!-- Card 1: Total Usuarios -->
+                <div class="user-metric-card">
+                    <span class="user-metric-label">TOTAL USUARIOS</span>
+                    <div class="user-metric-row">
+                        <span class="user-metric-val" id="user-total">0</span>
+                        <span class="user-metric-badge">+1 este mes</span>
+                    </div>
+                </div>
+                <!-- Card 2: Usuarios Activos -->
+                <div class="user-metric-card">
+                    <span class="user-metric-label">USUARIOS ACTIVOS</span>
+                    <div class="user-metric-row">
+                        <span class="user-metric-val text-blue" id="user-activos">0</span>
+                    </div>
+                </div>
+                <!-- Card 3: Administradores -->
+                <div class="user-metric-card">
+                    <span class="user-metric-label">ADMINISTRADORES</span>
+                    <div class="user-metric-row">
+                        <span class="user-metric-val text-red" id="user-admins">1</span>
+                    </div>
+                </div>
+                <!-- Card 4: Sesiones Activas -->
+                <div class="user-metric-card">
+                    <span class="user-metric-label">SESIONES ACTIVAS</span>
+                    <div class="user-metric-row">
+                        <span class="user-metric-val" id="user-sesiones">100%</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Filter Chips -->
+            <div class="user-filter-chips">
+                <button class="user-chip active" type="button" data-filter="todos">
+                    Todos (<span id="user-chip-total">0</span>)
+                </button>
+                <button class="user-chip" type="button" data-filter="admin">
+                    Administradores (<span id="user-chip-admins">1</span>)
+                </button>
+                <button class="user-chip" type="button" data-filter="operador">
+                    Operadores (<span id="user-chip-operadores">0</span>)
+                </button>
+                <button class="user-chip" type="button" data-filter="activos">
+                    Activos (<span id="user-chip-activos">0</span>)
+                </button>
+            </div>
+
+            <!-- Search Bar & Dropdown Controls -->
+            <div class="user-controls-bar">
+                <div class="user-search-wrap">
+                    <svg class="user-search-icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                        stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <line x1="21" x2="16.65" y1="21" y2="16.65"></line>
+                    </svg>
+                    <input class="user-search-input" id="buscadorUsuario"
+                        placeholder="Buscar por nombre, correo o ID..." type="text" />
+                </div>
+                <div class="user-controls-divider"></div>
+                <div class="user-select-wrap">
+                    <select id="filtroRolUsuario" class="user-select">
+                        <option value="">Todos los roles</option>
+                        <option value="admin">Administrador</option>
+                        <option value="operador">Operador</option>
+                    </select>
+                </div>
+                <div class="user-controls-divider"></div>
+                <div class="user-select-wrap">
+                    <select id="ordenarUsuario" class="user-select">
+                        <option value="">Ordenar por: Recientes</option>
+                        <option value="nombre-asc">Nombre (A - Z)</option>
+                        <option value="nombre-desc">Nombre (Z - A)</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Table Card -->
+            <section aria-label="Listado de usuarios" class="user-table-card">
+                <div class="user-table-responsive">
+                    <table class="user-table">
+                        <thead>
+                            <tr>
+                                <th>USUARIO / NOMBRE</th>
+                                <th>CORREO ELECTRÓNICO</th>
+                                <th>ROL</th>
+                                <th>ESTADO</th>
+                                <th style="text-align: right;">ACCIONES</th>
+                            </tr>
+                        </thead>
+                        <tbody id="Listado_Usuario">
+                            <!-- Populated dynamically by General.js -->
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Table Footer -->
+                <div class="user-table-footer">
+                    <p class="user-footer-text" id="user-footer-count">
+                        Mostrando <span id="user-shown-count" class="font-bold">0</span> de <span id="user-total-count"
+                            class="font-bold">0</span> usuarios
+                    </p>
+                    <nav aria-label="Paginación" class="user-pagination" id="user-pagination">
+                        <button class="user-page-nav" type="button">Anterior</button>
+                        <button aria-current="page" class="user-page-num active" type="button">1</button>
+                        <button class="user-page-nav" type="button">Siguiente</button>
+                    </nav>
+                </div>
+            </section>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div id="modalDistribuidor" class="modal">
+
+        <div class="modal-content">
+
+            <form id="Agregar_Distribuidor" method="post" enctype="multipart/form-data">
+                <h3>Agregar Distribuidor</h3>
+                <input type="hidden" name="id_Distribuidor" id="id_Distribuidor">
+
+
+                <input type="text" id="nombre_distribuidor" name="nombre_distribuidor" placeholder="Nombre">
+
+                <input type="text" id="ubicacion_distribuidor" name="ubicacion_distribuidor" placeholder="Ubicación">
+
+                <input type="text" id="telefono_distribuidor" name="telefono_distribuidor" placeholder="Teléfono">
+
+                <input type="text" id="email_distribuidor" name="email_distribuidor" placeholder="Email">
+
+
+
+
+                <button type="button" class="btn-cancelar" onclick="cerrarModal()">Cancelar</button>
+                <button type="submit" class="btn-guardar">Guardar</button>
+
+            </form>
+
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div id="modalProducto" class="modal">
+
+        <div class="modal-content">
+
+            <form id="Agregar_ProductoS" method="post" enctype="multipart/form-data">
+                <h3>Agregar Producto</h3>
+                <input type="hidden" name="id_Producto" id="id_Producto">
+
+
+                <input type="text" id="nombre_producto" name="nombre_producto" placeholder="Nombre">
+
+                <input type="text" id="descripcion" name="descripcion" placeholder="Descripción">
+
+                <input type="number" id="precio_Producto" name="precio_Producto" placeholder="Precio">
+
+                <input type="file" id="imagen_producto" name="imagen_producto" placeholder="Imagen">
+
+                <select name="categoria_id" id="categoria_id">
+                    <option value="">Selecciona una categoría</option>
+                </select>
+
+                <select name="proveedor_id_producto" id="proveedor_id_producto">
+                    <option value="">Selecciona un proveedor</option>
+
+                </select>
+
+
+                <button type="button" class="btn-cancelar" onclick="cerrarModalProducto()">Cancelar</button>
+                <button type="submit" class="btn-guardar">Guardar</button>
+
+            </form>
+
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div id="modalCategoria" class="modal">
+
+        <div class="modal-content">
+
+            <form id="Agregar_categoria" method="post" enctype="multipart/form-data">
+                <h3>Agregar Categoría</h3>
+                <input type="hidden" name="id_Categoria" id="id_Categoria">
+
+
+                <input type="text" id="nombre_categoria" name="nombre_categoria" placeholder="Nombre">
+
+                <button type="button" class="btn-cancelar" onclick="cerrarModalCategoria()">Cancelar</button>
+                <button type="submit" class="btn-guardar" onclick="AlertaCategoria()">Guardar</button>
+
+            </form>
+
+        </div>
+    </div>
+
+
+
+
+
+    <div id="modalUsuario" class="modal">
+
+        <div class="modal-content">
+
+            <form id="Agregar_Usuario" method="post" enctype="multipart/form-data">
+                <h3>Agregar Usuario</h3>
+                <input type="hidden" name="id_login" id="id_login">
+
+                <input type="text" id="nombre" name="nombre" placeholder="Nombre">
+
+                <input type="text" id="correo" name="correo" placeholder="Correo">
+
+                <input type="password" id="password" name="password" placeholder="Contraseña">
+
+
+
+
+                <button type="button" class="btn-cancelar" onclick="cerrarModalusuario()">Cancelar</button>
+                <button type="submit" class="btn-guardar">Guardar</button>
+
+            </form>
+
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <script src="General.js?v=2.7"></script>
+
+
+
+</body>
+
+</html>
